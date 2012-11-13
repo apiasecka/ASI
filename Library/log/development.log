@@ -1,0 +1,227 @@
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 153.19.5.48 at 2012-11-13 10:40:47 +0100
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (73.5ms)[0m  [1mSELECT "books".* FROM "books" [0m
+  [1m[35mActsAsTaggableOn::Tag Load (71.6ms)[0m  SELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN books ON books.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Book' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT books.id FROM "books" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id
+  [1m[36mActsAsTaggableOn::Tag Load (119.5ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 1 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (77.9ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 2 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (76.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 3 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (118.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 4 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (158.5ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 6 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  Rendered books/index.html.erb within layouts/application (1151.7ms)
+Compiled jquery.js  (3ms)  (pid 8746)
+Compiled jquery_ujs.js  (0ms)  (pid 8746)
+Compiled jquery.Jcrop.js  (1ms)  (pid 8746)
+Compiled twitter/bootstrap/bootstrap-transition.js  (0ms)  (pid 8746)
+Compiled twitter/bootstrap/bootstrap-alert.js  (0ms)  (pid 8746)
+Compiled twitter/bootstrap/bootstrap-modal.js  (0ms)  (pid 8746)
+Compiled twitter/bootstrap/bootstrap-dropdown.js  (0ms)  (pid 8746)
+Compiled twitter/bootstrap/bootstrap-scrollspy.js  (0ms)  (pid 8746)
+Compiled twitter/bootstrap/bootstrap-tab.js  (0ms)  (pid 8746)
+Compiled twitter/bootstrap/bootstrap-tooltip.js  (0ms)  (pid 8746)
+Compiled twitter/bootstrap/bootstrap-popover.js  (0ms)  (pid 8746)
+Compiled twitter/bootstrap/bootstrap-button.js  (0ms)  (pid 8746)
+Compiled twitter/bootstrap/bootstrap-collapse.js  (0ms)  (pid 8746)
+Compiled twitter/bootstrap/bootstrap-carousel.js  (0ms)  (pid 8746)
+Compiled twitter/bootstrap/bootstrap-typeahead.js  (0ms)  (pid 8746)
+Compiled twitter/bootstrap/bootstrap-affix.js  (0ms)  (pid 8746)
+Compiled twitter/bootstrap.js  (1543ms)  (pid 8746)
+Compiled books.js  (59ms)  (pid 8746)
+Compiled bootstrap.js  (3ms)  (pid 8746)
+Compiled application.js  (2305ms)  (pid 8746)
+Completed 200 OK in 4424ms (Views: 3433.6ms | ActiveRecord: 977.2ms)
+
+
+Started GET "/" for 153.19.5.48 at 2012-11-13 10:42:47 +0100
+Processing by BooksController#index as HTML
+  [1m[35mBook Load (193.5ms)[0m  SELECT "books".* FROM "books" 
+  [1m[36mActsAsTaggableOn::Tag Load (119.6ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 1 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (119.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 2 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (45.5ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 3 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (93.5ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 4 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (56.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 6 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  Rendered books/index.html.erb within layouts/application (738.4ms)
+Completed 200 OK in 1105ms (Views: 475.7ms | ActiveRecord: 627.8ms)
+
+
+Started GET "/books/6" for 153.19.5.48 at 2012-11-13 10:44:25 +0100
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mBook Load (208.1ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1  [["id", "6"]]
+  [1m[36mActsAsTaggableOn::Tag Load (80.8ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 6 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  Rendered books/show.html.erb within layouts/application (88.7ms)
+Completed 200 OK in 439ms (Views: 148.1ms | ActiveRecord: 288.9ms)
+
+
+Started DELETE "/books/6" for 153.19.5.48 at 2012-11-13 10:44:33 +0100
+Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"crEGZ/oo3h+tXsb2ubevxdphl3VxPyKG6WeGGkDCNDg=", "id"=>"6"}
+  [1m[35mBook Load (82.8ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1  [["id", "6"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mActsAsTaggableOn::Tagging Load (38.7ms)[0m  SELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = 6 AND "taggings"."taggable_type" = 'Book'
+  [1m[36mActsAsTaggableOn::Tag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."id" IN (5, 6)[0m
+  [1m[35mSQL (113.9ms)[0m  DELETE FROM "taggings" WHERE "taggings"."id" = ?  [["id", 5]]
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "taggings" WHERE "taggings"."id" = ?[0m  [["id", 6]]
+  [1m[35mActsAsTaggableOn::Tagging Load (0.2ms)[0m  SELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = 6 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags')
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "books" WHERE "books"."id" = ?[0m  [["id", 6]]
+  [1m[35m (354.8ms)[0m  commit transaction
+Redirected to http://sigma.ug.edu.pl:1234/books
+Completed 302 Found in 728ms (ActiveRecord: 591.0ms)
+
+
+Started GET "/books" for 153.19.5.48 at 2012-11-13 10:44:34 +0100
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (121.0ms)[0m  [1mSELECT "books".* FROM "books" [0m
+  [1m[35mActsAsTaggableOn::Tag Load (119.5ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 1 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (118.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 2 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (118.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 3 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (118.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 4 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  Rendered books/index.html.erb within layouts/application (726.3ms)
+Completed 200 OK in 941ms (Views: 344.6ms | ActiveRecord: 595.2ms)
+
+
+Started DELETE "/books/4" for 153.19.5.48 at 2012-11-13 10:46:19 +0100
+Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"crEGZ/oo3h+tXsb2ubevxdphl3VxPyKG6WeGGkDCNDg=", "id"=>"4"}
+  [1m[35mBook Load (238.3ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1  [["id", "4"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mActsAsTaggableOn::Tagging Load (78.7ms)[0m  SELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = 4 AND "taggings"."taggable_type" = 'Book'
+  [1m[36mActsAsTaggableOn::Tag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."id" IN (3)[0m
+  [1m[35mSQL (117.7ms)[0m  DELETE FROM "taggings" WHERE "taggings"."id" = ?  [["id", 3]]
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = 4 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags')[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "books" WHERE "books"."id" = ?  [["id", 4]]
+  [1m[36m (231.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://sigma.ug.edu.pl:1234/books
+Completed 302 Found in 778ms (ActiveRecord: 666.5ms)
+
+
+Started GET "/books" for 153.19.5.48 at 2012-11-13 10:46:20 +0100
+Processing by BooksController#index as HTML
+  [1m[35mBook Load (119.1ms)[0m  SELECT "books".* FROM "books" 
+  [1m[36mActsAsTaggableOn::Tag Load (119.5ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 1 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (118.8ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 2 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (118.8ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 3 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  Rendered books/index.html.erb within layouts/application (524.8ms)
+Completed 200 OK in 821ms (Views: 343.8ms | ActiveRecord: 476.2ms)
+
+
+Started DELETE "/books/3" for 153.19.5.48 at 2012-11-13 10:46:24 +0100
+Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"crEGZ/oo3h+tXsb2ubevxdphl3VxPyKG6WeGGkDCNDg=", "id"=>"3"}
+  [1m[35mBook Load (40.6ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1  [["id", "3"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mActsAsTaggableOn::Tagging Load (4.8ms)[0m  SELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = 3 AND "taggings"."taggable_type" = 'Book'
+  [1m[36mActsAsTaggableOn::Tag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE "tags"."id" IN (4)[0m
+  [1m[35mSQL (42.0ms)[0m  DELETE FROM "taggings" WHERE "taggings"."id" = ?  [["id", 4]]
+  [1m[36mActsAsTaggableOn::Tagging Load (0.2ms)[0m  [1mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = 3 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags')[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "books" WHERE "books"."id" = ?  [["id", 3]]
+  [1m[36m (263.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://sigma.ug.edu.pl:1234/books
+Completed 302 Found in 436ms (ActiveRecord: 351.0ms)
+
+
+Started GET "/books" for 153.19.5.48 at 2012-11-13 10:46:24 +0100
+Processing by BooksController#index as HTML
+  [1m[35mBook Load (119.1ms)[0m  SELECT "books".* FROM "books" 
+  [1m[36mActsAsTaggableOn::Tag Load (117.6ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 1 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (77.5ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 2 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered books/index.html.erb within layouts/application (204.9ms)
+Completed 200 OK in 415ms (Views: 100.1ms | ActiveRecord: 314.2ms)
+
+
+Started DELETE "/books/2" for 153.19.5.48 at 2012-11-13 10:46:28 +0100
+Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"crEGZ/oo3h+tXsb2ubevxdphl3VxPyKG6WeGGkDCNDg=", "id"=>"2"}
+  [1m[36mBook Load (119.0ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mActsAsTaggableOn::Tagging Load (78.9ms)[0m  [1mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = 2 AND "taggings"."taggable_type" = 'Book'[0m
+  [1m[35mActsAsTaggableOn::Tagging Load (0.2ms)[0m  SELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = 2 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags')
+  [1m[36mSQL (117.9ms)[0m  [1mDELETE FROM "books" WHERE "books"."id" = ?[0m  [["id", 2]]
+  [1m[35m (193.0ms)[0m  commit transaction
+Redirected to http://sigma.ug.edu.pl:1234/books
+Completed 302 Found in 634ms (ActiveRecord: 509.1ms)
+
+
+Started GET "/books" for 153.19.5.48 at 2012-11-13 10:46:29 +0100
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (47.6ms)[0m  [1mSELECT "books".* FROM "books" [0m
+  [1m[35mActsAsTaggableOn::Tag Load (41.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 1 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered books/index.html.erb within layouts/application (47.9ms)
+Completed 200 OK in 113ms (Views: 23.2ms | ActiveRecord: 88.8ms)
+
+
+Started DELETE "/books/1" for 153.19.5.48 at 2012-11-13 10:46:33 +0100
+Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"crEGZ/oo3h+tXsb2ubevxdphl3VxPyKG6WeGGkDCNDg=", "id"=>"1"}
+  [1m[36mBook Load (119.0ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mActsAsTaggableOn::Tagging Load (78.4ms)[0m  [1mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = 1 AND "taggings"."taggable_type" = 'Book'[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE "tags"."id" IN (1, 2)
+  [1m[36mSQL (72.7ms)[0m  [1mDELETE FROM "taggings" WHERE "taggings"."id" = ?[0m  [["id", 1]]
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "taggings" WHERE "taggings"."id" = ?  [["id", 2]]
+  [1m[36mActsAsTaggableOn::Tagging Load (0.1ms)[0m  [1mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = 1 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags')[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "books" WHERE "books"."id" = ?  [["id", 1]]
+  [1m[36m (204.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://sigma.ug.edu.pl:1234/books
+Completed 302 Found in 521ms (ActiveRecord: 474.6ms)
+
+
+Started GET "/books" for 153.19.5.48 at 2012-11-13 10:46:33 +0100
+Processing by BooksController#index as HTML
+  [1m[35mBook Load (118.2ms)[0m  SELECT "books".* FROM "books" 
+  Rendered books/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 212ms (Views: 93.2ms | ActiveRecord: 118.2ms)
+
+
+Started GET "/books/new" for 153.19.5.48 at 2012-11-13 10:46:36 +0100
+Processing by BooksController#new as HTML
+  [1m[36mActsAsTaggableOn::Tag Load (120.4ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" IS NULL AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  Rendered books/_form.html.erb (466.2ms)
+  Rendered books/new.html.erb within layouts/application (588.7ms)
+Completed 200 OK in 655ms (Views: 533.4ms | ActiveRecord: 120.4ms)
+
+
+Started POST "/books" for 153.19.5.48 at 2012-11-13 10:50:29 +0100
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"crEGZ/oo3h+tXsb2ubevxdphl3VxPyKG6WeGGkDCNDg=", "book"=>{"author"=>"Houck Colleen", "title"=>"Klątwa tygrysa", "isbn"=>"", "price_pln"=>"30", "cover"=>#<ActionDispatch::Http::UploadedFile:0x00000004570220 @original_filename="klatwa-tygrysa.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"book[cover]\"; filename=\"klatwa-tygrysa.jpg\"\r\nContent-Type: image/jpeg\r\n", @tempfile=#<File:/tmp/RackMultipart20121113-8746-1ua0g28>>, "cover_cache"=>"", "remote_cover_url"=>"", "tag_list"=>"fantasy"}, "commit"=>"Create Book"}
+  [1m[35mActsAsTaggableOn::Tag Load (218.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" IS NULL AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (315.3ms)[0m  INSERT INTO "books" ("author", "cover", "created_at", "isbn", "price", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["author", "Houck Colleen"], ["cover", "klatwa-tygrysa.jpg"], ["created_at", Tue, 13 Nov 2012 09:50:30 UTC +00:00], ["isbn", ""], ["price", 3000], ["title", "Klątwa tygrysa"], ["updated_at", Tue, 13 Nov 2012 09:50:30 UTC +00:00]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE (lower(name) = 'fantasy')[0m
+  [1m[35mActsAsTaggableOn::Tag Exists (0.1ms)[0m  SELECT 1 AS one FROM "tags" WHERE "tags"."name" = 'fantasy' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "tags" ("name") VALUES (?)[0m  [["name", "fantasy"]]
+  [1m[35mActsAsTaggableOn::Tag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 9 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tagging Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "taggings" WHERE ("taggings"."tag_id" = 7 AND "taggings"."taggable_type" = 'Book' AND "taggings"."taggable_id" = 9 AND "taggings"."context" = 'tags' AND "taggings"."tagger_id" IS NULL AND "taggings"."tagger_type" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "taggings" ("context", "created_at", "tag_id", "taggable_id", "taggable_type", "tagger_id", "tagger_type") VALUES (?, ?, ?, ?, ?, ?, ?)  [["context", "tags"], ["created_at", Tue, 13 Nov 2012 09:50:30 UTC +00:00], ["tag_id", 7], ["taggable_id", 9], ["taggable_type", "Book"], ["tagger_id", nil], ["tagger_type", nil]]
+  [1m[36m (311.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://sigma.ug.edu.pl:1234/books
+Completed 302 Found in 1316ms (ActiveRecord: 845.7ms)
+
+
+Started GET "/books" for 153.19.5.48 at 2012-11-13 10:50:31 +0100
+Processing by BooksController#index as HTML
+  [1m[35mBook Load (167.6ms)[0m  SELECT "books".* FROM "books" 
+  [1m[36mActsAsTaggableOn::Tag Load (117.8ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 9 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  Rendered books/index.html.erb within layouts/application (124.6ms)
+Completed 200 OK in 465ms (Views: 178.5ms | ActiveRecord: 285.5ms)
+
+
+Started GET "/books/9" for 153.19.5.48 at 2012-11-13 10:51:09 +0100
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mBook Load (123.5ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1  [["id", "9"]]
+  [1m[36mActsAsTaggableOn::Tag Load (119.6ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 9 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  Rendered books/show.html.erb within layouts/application (126.4ms)
+Completed 200 OK in 344ms (Views: 99.0ms | ActiveRecord: 243.1ms)
+
+
+Started GET "/books" for 153.19.5.48 at 2012-11-13 10:51:16 +0100
+Processing by BooksController#index as HTML
+  [1m[35mBook Load (118.5ms)[0m  SELECT "books".* FROM "books" 
+  [1m[36mActsAsTaggableOn::Tag Load (126.8ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 9 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  Rendered books/index.html.erb within layouts/application (134.1ms)
+Completed 200 OK in 316ms (Views: 69.2ms | ActiveRecord: 245.3ms)
