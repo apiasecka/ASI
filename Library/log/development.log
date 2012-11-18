@@ -730,3 +730,1004 @@ Completed 200 OK in 347ms (Views: 101.3ms | ActiveRecord: 244.3ms)
 
 
 Started GET "/auth/facebook" for 89.71.241.156 at 2012-11-18 15:02:57 +0100
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 89.71.241.156 at 2012-11-18 17:38:18 +0100
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (118.0ms)[0m  [1mSELECT "books".* FROM "books" [0m
+  [1m[35mActsAsTaggableOn::Tag Load (119.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 9 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered books/index.html.erb within layouts/application (629.1ms)
+Completed 200 OK in 1145ms (Views: 656.7ms | ActiveRecord: 476.9ms)
+
+
+Started GET "/auth/facebook" for 89.71.241.156 at 2012-11-18 17:38:22 +0100
+
+
+Started GET "/" for 89.71.241.156 at 2012-11-18 17:39:20 +0100
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (235.2ms)[0m  [1mSELECT "books".* FROM "books" [0m
+  [1m[35mActsAsTaggableOn::Tag Load (120.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 9 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered books/index.html.erb within layouts/application (128.2ms)
+Completed 200 OK in 540ms (Views: 183.4ms | ActiveRecord: 355.5ms)
+
+
+Started GET "/auth/facebook" for 89.71.241.156 at 2012-11-18 17:39:22 +0100
+
+
+Started GET "/auth/facebook/callback?state=aa1bd112f81c62d9fedb1417630de07501191e0a57a55f86&code=AQC3YwkYnVLUIB7CxST3azWVXjbK82iLyAtZHQ4VmPHAcr_kp08GS9eY8VCWt_b24DvSX_fdIVlgzrMRFFv_4ku-Ep6tnlIt-f_rbs7WqpY0afH6YpKIcNbbqES1_PjaxSy32jsAWxw-iZiSw0vd8DO1zi4AOOdM0KiqxP-Yvc_6Tye-J3VRS3HOThy1Wt7AB_WBhNJhVYuYj_hsIKfHHHyc" for 89.71.241.156 at 2012-11-18 17:39:26 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"aa1bd112f81c62d9fedb1417630de07501191e0a57a55f86", "code"=>"AQC3YwkYnVLUIB7CxST3azWVXjbK82iLyAtZHQ4VmPHAcr_kp08GS9eY8VCWt_b24DvSX_fdIVlgzrMRFFv_4ku-Ep6tnlIt-f_rbs7WqpY0afH6YpKIcNbbqES1_PjaxSy32jsAWxw-iZiSw0vd8DO1zi4AOOdM0KiqxP-Yvc_6Tye-J3VRS3HOThy1Wt7AB_WBhNJhVYuYj_hsIKfHHHyc", "provider"=>"facebook"}
+Completed 500 Internal Server Error in 8ms
+
+ActiveRecord::StatementInvalid (Could not find table 'authorizations'):
+  app/models/authorization.rb:18:in `find_or_create'
+  app/controllers/sessions_controller.rb:10:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.6ms)
+Connecting to database specified by database.yml
+  [1m[36m (119.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateBooks (20121023105455)
+Migrating to ActsAsTaggableOnMigration (20121024125411)
+Migrating to AddCoverToBooks (20121031122911)
+Migrating to AddTokenToAuthentications (20121118132037)
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (119.8ms)[0m  ALTER TABLE "authentications" ADD "token" varchar(255)
+SQLite3::SQLException: no such table: authentications: ALTER TABLE "authentications" ADD "token" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+
+
+Started GET "/auth/facebook/callback?state=aa1bd112f81c62d9fedb1417630de07501191e0a57a55f86&code=AQAtJVeTbE3Bv_OJ1SyWJH-sb4fs5wVDNVKcuSIZZkb_7s7wgnopWoh9D8L3UcanhlfQZRQrl-rZvcd6XpMnw5uakz0e6Hsq5-bu4Ie4zMoFHAzgL31x7rohqgBt9UnZU0YnxI_Z7X9m3PFKUejAETUng7ugJycE5Js3LT1J6owY0V184eGoEBHI-lhPdxkRIa05_dY0miu5N9A6cdOiL2al" for 89.71.241.156 at 2012-11-18 17:41:32 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"aa1bd112f81c62d9fedb1417630de07501191e0a57a55f86", "code"=>"AQAtJVeTbE3Bv_OJ1SyWJH-sb4fs5wVDNVKcuSIZZkb_7s7wgnopWoh9D8L3UcanhlfQZRQrl-rZvcd6XpMnw5uakz0e6Hsq5-bu4Ie4zMoFHAzgL31x7rohqgBt9UnZU0YnxI_Z7X9m3PFKUejAETUng7ugJycE5Js3LT1J6owY0V184eGoEBHI-lhPdxkRIa05_dY0miu5N9A6cdOiL2al", "provider"=>"facebook"}
+Completed 500 Internal Server Error in 246ms
+
+ActiveRecord::StatementInvalid (Could not find table 'authorizations'):
+  app/models/authorization.rb:18:in `find_or_create'
+  app/controllers/sessions_controller.rb:10:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (38.0ms)
+
+
+Started GET "/auth/facebook" for 89.71.241.156 at 2012-11-18 17:41:36 +0100
+
+
+Started GET "/auth/facebook/callback?state=ebbbbf0c5b510f0b41583031b6fa0e3926ebb783a2df5146&code=AQBdUEVvAycEyVGDowJpIzBnZKa5RnwchMDvWF867Mvi00ARxWpONSolvUAyq7bY_RAU0TCz440M9BWWazvAlB1Gsr0NEOT1fEuvtwgZZKmE-OS_Gvfrb4r8Iqw9ezLEBK_trTpkexpMEZD3oxCbt3xmrjoowqJR7FGYfEgROpkbn2SAjUW7d42UwXMK10wo9vjUUklKG3C2LVZOJFIsUUoD" for 89.71.241.156 at 2012-11-18 17:41:36 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"ebbbbf0c5b510f0b41583031b6fa0e3926ebb783a2df5146", "code"=>"AQBdUEVvAycEyVGDowJpIzBnZKa5RnwchMDvWF867Mvi00ARxWpONSolvUAyq7bY_RAU0TCz440M9BWWazvAlB1Gsr0NEOT1fEuvtwgZZKmE-OS_Gvfrb4r8Iqw9ezLEBK_trTpkexpMEZD3oxCbt3xmrjoowqJR7FGYfEgROpkbn2SAjUW7d42UwXMK10wo9vjUUklKG3C2LVZOJFIsUUoD", "provider"=>"facebook"}
+Completed 500 Internal Server Error in 1ms
+
+ActiveRecord::StatementInvalid (Could not find table 'authorizations'):
+  app/models/authorization.rb:18:in `find_or_create'
+  app/controllers/sessions_controller.rb:10:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.6ms)
+
+
+Started GET "/auth/facebook/callback?state=ebbbbf0c5b510f0b41583031b6fa0e3926ebb783a2df5146&code=AQBdUEVvAycEyVGDowJpIzBnZKa5RnwchMDvWF867Mvi00ARxWpONSolvUAyq7bY_RAU0TCz440M9BWWazvAlB1Gsr0NEOT1fEuvtwgZZKmE-OS_Gvfrb4r8Iqw9ezLEBK_trTpkexpMEZD3oxCbt3xmrjoowqJR7FGYfEgROpkbn2SAjUW7d42UwXMK10wo9vjUUklKG3C2LVZOJFIsUUoD" for 89.71.241.156 at 2012-11-18 17:45:06 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"ebbbbf0c5b510f0b41583031b6fa0e3926ebb783a2df5146", "code"=>"AQBdUEVvAycEyVGDowJpIzBnZKa5RnwchMDvWF867Mvi00ARxWpONSolvUAyq7bY_RAU0TCz440M9BWWazvAlB1Gsr0NEOT1fEuvtwgZZKmE-OS_Gvfrb4r8Iqw9ezLEBK_trTpkexpMEZD3oxCbt3xmrjoowqJR7FGYfEgROpkbn2SAjUW7d42UwXMK10wo9vjUUklKG3C2LVZOJFIsUUoD", "provider"=>"facebook"}
+Completed 500 Internal Server Error in 1ms
+
+ActiveRecord::StatementInvalid (Could not find table 'authorizations'):
+  app/models/authorization.rb:18:in `find_or_create'
+  app/controllers/sessions_controller.rb:10:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.3ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 89.71.241.156 at 2012-11-18 18:10:04 +0100
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (124.4ms)[0m  [1mSELECT "books".* FROM "books" [0m
+  [1m[35mActsAsTaggableOn::Tag Load (118.9ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 9 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered books/index.html.erb within layouts/application (548.1ms)
+Completed 200 OK in 974ms (Views: 476.3ms | ActiveRecord: 485.2ms)
+
+
+Started GET "/auth/facebook" for 89.71.241.156 at 2012-11-18 18:10:08 +0100
+
+
+Started GET "/auth/facebook/callback?state=7eb613ce1ae6e4c247868a4d4c5c41150d16f450e2e774d2&code=AQBSSzGskvIBUZ_h8vR6ZoJbu3wjKnyjPWyavwWWJHCWWg8OjduleBIclB0K-N1SlfT2FqU9CImTdpYzplvaNb92KmlBIGsuM_jrbKp2fzklErna-2sk9pHU_uJhmV64E1P-bvXMKxs_obDWEZmYbeX9VnvU50HrWmRt3zF_VAXbBU3IdNYUK2Qdx61FJrY_dFcbeRqZEUPChr8m8R0w6qb_" for 89.71.241.156 at 2012-11-18 18:10:09 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"7eb613ce1ae6e4c247868a4d4c5c41150d16f450e2e774d2", "code"=>"AQBSSzGskvIBUZ_h8vR6ZoJbu3wjKnyjPWyavwWWJHCWWg8OjduleBIclB0K-N1SlfT2FqU9CImTdpYzplvaNb92KmlBIGsuM_jrbKp2fzklErna-2sk9pHU_uJhmV64E1P-bvXMKxs_obDWEZmYbeX9VnvU50HrWmRt3zF_VAXbBU3IdNYUK2Qdx61FJrY_dFcbeRqZEUPChr8m8R0w6qb_", "provider"=>"facebook"}
+Completed 500 Internal Server Error in 5ms
+
+ActiveRecord::StatementInvalid (Could not find table 'authorizations'):
+  app/models/authorization.rb:18:in `find_or_create'
+  app/controllers/sessions_controller.rb:10:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.2ms)
+
+
+Started GET "/" for 94.78.129.204 at 2012-11-18 18:10:33 +0100
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (120.2ms)[0m  [1mSELECT "books".* FROM "books" [0m
+  [1m[35mActsAsTaggableOn::Tag Load (120.6ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 9 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered books/index.html.erb within layouts/application (127.3ms)
+Completed 200 OK in 456ms (Views: 213.8ms | ActiveRecord: 240.8ms)
+
+
+Started GET "/auth/facebook" for 94.78.129.204 at 2012-11-18 18:10:37 +0100
+
+
+Started GET "/auth/facebook/callback?state=b8920049eead22bf877f9507383562842a30e87277cb8e27&code=AQDtKmJcP_RrZnn2FAbpuckU3fOHZdAgPVMHpeh9jksBz-5THnz5aVFspVBg7UrGB9cRrDyIghMe2Q_h_ZrxXBiampiLX1mOLRGLe4aCb1gI2MyUr0sXr9iKMkuAsH0zR76oH_XsAVLF9M_1XvRgNJoVpTAi-DSqn1Syt5NoevSJId-vwR9raXnOBBCoycU1zeIEYxchY7a5IOAoBPEsCrh1" for 94.78.129.204 at 2012-11-18 18:10:42 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"b8920049eead22bf877f9507383562842a30e87277cb8e27", "code"=>"AQDtKmJcP_RrZnn2FAbpuckU3fOHZdAgPVMHpeh9jksBz-5THnz5aVFspVBg7UrGB9cRrDyIghMe2Q_h_ZrxXBiampiLX1mOLRGLe4aCb1gI2MyUr0sXr9iKMkuAsH0zR76oH_XsAVLF9M_1XvRgNJoVpTAi-DSqn1Syt5NoevSJId-vwR9raXnOBBCoycU1zeIEYxchY7a5IOAoBPEsCrh1", "provider"=>"facebook"}
+Completed 500 Internal Server Error in 1ms
+
+ActiveRecord::StatementInvalid (Could not find table 'authorizations'):
+  app/models/authorization.rb:18:in `find_or_create'
+  app/controllers/sessions_controller.rb:10:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.2ms)
+Connecting to database specified by database.yml
+  [1m[36m (119.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+  [1m[36m (119.6ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateBooks (20121023105455)
+Migrating to ActsAsTaggableOnMigration (20121024125411)
+Migrating to AddCoverToBooks (20121031122911)
+Migrating to AddTokenToAuthentications (20121118132037)
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (120.6ms)[0m  ALTER TABLE "authentications" ADD "token" varchar(255)
+SQLite3::SQLException: no such table: authentications: ALTER TABLE "authentications" ADD "token" varchar(255)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (42.8ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+  [1m[36m (122.9ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateBooks (20121023105455)
+Migrating to ActsAsTaggableOnMigration (20121024125411)
+Migrating to AddCoverToBooks (20121031122911)
+Migrating to CreateAuthorizations (20121118133229)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (161.5ms)[0m  CREATE TABLE "authorizations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "provider" varchar(255), "uid" varchar(255), "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.8ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20121118133229')[0m
+  [1m[35m (278.2ms)[0m  commit transaction
+Migrating to CreateUsers (20121118133236)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (199.3ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "mail" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20121118133236')[0m
+  [1m[35m (242.6ms)[0m  commit transaction
+  [1m[36m (117.4ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (39.7ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("authorizations")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("books")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("taggings")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_info('index_taggings_on_taggable_id_and_taggable_type_and_context')
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_taggings_on_tag_id')[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("tags")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("users")[0m
+Connecting to database specified by database.yml
+  [1m[36m (39.5ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (155.4ms)[0m  [1mINSERT INTO "books" ("author", "cover", "created_at", "isbn", "price", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["author", "Lem"], ["cover", nil], ["created_at", Sun, 18 Nov 2012 17:33:38 UTC +00:00], ["isbn", "8308011136"], ["price", 10000], ["title", "Wizja lokalna"], ["updated_at", Sun, 18 Nov 2012 17:33:38 UTC +00:00]]
+  [1m[35m (239.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (158.2ms)[0m  INSERT INTO "books" ("author", "cover", "created_at", "isbn", "price", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["author", "Holmes"], ["cover", nil], ["created_at", Sun, 18 Nov 2012 17:33:38 UTC +00:00], ["isbn", "9788376484952"], ["price", 5600], ["title", "Wiek cudów"], ["updated_at", Sun, 18 Nov 2012 17:33:38 UTC +00:00]]
+  [1m[36m (128.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (43.3ms)[0m  [1mINSERT INTO "books" ("author", "cover", "created_at", "isbn", "price", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["author", "Lem"], ["cover", nil], ["created_at", Sun, 18 Nov 2012 17:33:39 UTC +00:00], ["isbn", nil], ["price", 3500], ["title", "Dzienniki gwiazdowe"], ["updated_at", Sun, 18 Nov 2012 17:33:39 UTC +00:00]]
+  [1m[35m (243.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (123.9ms)[0m  INSERT INTO "books" ("author", "cover", "created_at", "isbn", "price", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["author", "King"], ["cover", nil], ["created_at", Sun, 18 Nov 2012 17:33:39 UTC +00:00], ["isbn", "8372558841"], ["price", 3200], ["title", "Jak pisać"], ["updated_at", Sun, 18 Nov 2012 17:33:39 UTC +00:00]]
+  [1m[36m (236.1ms)[0m  [1mcommit transaction[0m
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 89.71.241.156 at 2012-11-18 18:34:02 +0100
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (159.2ms)[0m  [1mSELECT "books".* FROM "books" [0m
+  [1m[35mActsAsTaggableOn::Tag Load (41.7ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 9 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (39.5ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 10 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (40.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 11 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (40.4ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 12 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (40.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 13 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered books/index.html.erb within layouts/application (596.1ms)
+Completed 200 OK in 997ms (Views: 424.9ms | ActiveRecord: 560.1ms)
+
+
+Started GET "/auth/facebook" for 89.71.241.156 at 2012-11-18 18:34:07 +0100
+
+
+Started GET "/auth/facebook/callback?state=27df47306a7c120b01d89bd860d06491477ab6d0eb740387&code=AQDKsDEnGSt917_FJiPbB5YlQt92yQoVGFgSvWzo3RngG5x5cLm8netl5rcxy_c_ip32GD-n4v9Ggzavgfk3mmmeeS0-gavMHFrOiQ6plUVl_wCggvxkyvlTewSKGpVkmWRxehUmYfUjVFkN4wHNDROdP49dbgv1TZ1wTqDXV90fdJiJ5mYlj3ZcRoWffsvgvN0To3xvI-kg7T8iR9uYrHOe" for 89.71.241.156 at 2012-11-18 18:34:07 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"27df47306a7c120b01d89bd860d06491477ab6d0eb740387", "code"=>"AQDKsDEnGSt917_FJiPbB5YlQt92yQoVGFgSvWzo3RngG5x5cLm8netl5rcxy_c_ip32GD-n4v9Ggzavgfk3mmmeeS0-gavMHFrOiQ6plUVl_wCggvxkyvlTewSKGpVkmWRxehUmYfUjVFkN4wHNDROdP49dbgv1TZ1wTqDXV90fdJiJ5mYlj3ZcRoWffsvgvN0To3xvI-kg7T8iR9uYrHOe", "provider"=>"facebook"}
+  [1m[36mAuthorization Load (80.4ms)[0m  [1mSELECT "authorizations".* FROM "authorizations" WHERE "authorizations"."provider" = 'facebook' AND "authorizations"."uid" = '1805970805' LIMIT 1[0m
+Completed 500 Internal Server Error in 259ms
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/models/authorization.rb:19:in `find_or_create'
+  app/controllers/sessions_controller.rb:10:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.2ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/auth/facebook/callback?state=27df47306a7c120b01d89bd860d06491477ab6d0eb740387&code=AQDKsDEnGSt917_FJiPbB5YlQt92yQoVGFgSvWzo3RngG5x5cLm8netl5rcxy_c_ip32GD-n4v9Ggzavgfk3mmmeeS0-gavMHFrOiQ6plUVl_wCggvxkyvlTewSKGpVkmWRxehUmYfUjVFkN4wHNDROdP49dbgv1TZ1wTqDXV90fdJiJ5mYlj3ZcRoWffsvgvN0To3xvI-kg7T8iR9uYrHOe" for 89.71.241.156 at 2012-11-18 18:38:27 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"27df47306a7c120b01d89bd860d06491477ab6d0eb740387", "code"=>"AQDKsDEnGSt917_FJiPbB5YlQt92yQoVGFgSvWzo3RngG5x5cLm8netl5rcxy_c_ip32GD-n4v9Ggzavgfk3mmmeeS0-gavMHFrOiQ6plUVl_wCggvxkyvlTewSKGpVkmWRxehUmYfUjVFkN4wHNDROdP49dbgv1TZ1wTqDXV90fdJiJ5mYlj3ZcRoWffsvgvN0To3xvI-kg7T8iR9uYrHOe", "provider"=>"facebook"}
+  [1m[36mAuthorization Load (114.9ms)[0m  [1mSELECT "authorizations".* FROM "authorizations" WHERE "authorizations"."provider" = 'facebook' AND "authorizations"."uid" = '1805970805' LIMIT 1[0m
+Completed 500 Internal Server Error in 834ms
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/models/authorization.rb:19:in `find_or_create'
+  app/controllers/sessions_controller.rb:10:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.6ms)
+
+
+Started GET "/auth/facebook/callback?state=27df47306a7c120b01d89bd860d06491477ab6d0eb740387&code=AQDKsDEnGSt917_FJiPbB5YlQt92yQoVGFgSvWzo3RngG5x5cLm8netl5rcxy_c_ip32GD-n4v9Ggzavgfk3mmmeeS0-gavMHFrOiQ6plUVl_wCggvxkyvlTewSKGpVkmWRxehUmYfUjVFkN4wHNDROdP49dbgv1TZ1wTqDXV90fdJiJ5mYlj3ZcRoWffsvgvN0To3xvI-kg7T8iR9uYrHOe" for 89.71.241.156 at 2012-11-18 18:38:30 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"27df47306a7c120b01d89bd860d06491477ab6d0eb740387", "code"=>"AQDKsDEnGSt917_FJiPbB5YlQt92yQoVGFgSvWzo3RngG5x5cLm8netl5rcxy_c_ip32GD-n4v9Ggzavgfk3mmmeeS0-gavMHFrOiQ6plUVl_wCggvxkyvlTewSKGpVkmWRxehUmYfUjVFkN4wHNDROdP49dbgv1TZ1wTqDXV90fdJiJ5mYlj3ZcRoWffsvgvN0To3xvI-kg7T8iR9uYrHOe", "provider"=>"facebook"}
+  [1m[35mAuthorization Load (143.6ms)[0m  SELECT "authorizations".* FROM "authorizations" WHERE "authorizations"."provider" = 'facebook' AND "authorizations"."uid" = '1805970805' LIMIT 1
+Completed 500 Internal Server Error in 145ms
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/models/authorization.rb:19:in `find_or_create'
+  app/controllers/sessions_controller.rb:10:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.0ms)
+
+
+Started GET "/" for 89.71.241.156 at 2012-11-18 18:38:54 +0100
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (163.9ms)[0m  [1mSELECT "books".* FROM "books" [0m
+  [1m[35mActsAsTaggableOn::Tag Load (39.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 9 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (43.0ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 10 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (43.7ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 11 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (40.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 12 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (39.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 13 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered books/index.html.erb within layouts/application (587.6ms)
+Completed 200 OK in 1079ms (Views: 495.8ms | ActiveRecord: 571.4ms)
+
+
+Started GET "/auth/facebook" for 89.71.241.156 at 2012-11-18 18:38:57 +0100
+
+
+Started GET "/auth/facebook/callback?state=c57b9fcea487cc3bbf96b8813dc3e040a7b2b36b26a00009&code=AQDaGgYmkIBPOVICO0Ohx7X2GJY25BNxOJW9zq1mjwc6L8bcbqWHYU0dnR8VfOzU-28NOEEwCdGn0lKfH8ZM-RaGeVgJ-eWRBTvUg3A8Ulg1GZ2yUgwdlHjf9eSpelSxtz-et1AyqrQJzrZc3VDVXoovSIDPMyL5R-i2ok7azIP6UTHZ9adrNaPQ4Z7FA4k757L-q2sw-KZGKOC3Y5rZCCAp" for 89.71.241.156 at 2012-11-18 18:38:57 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"c57b9fcea487cc3bbf96b8813dc3e040a7b2b36b26a00009", "code"=>"AQDaGgYmkIBPOVICO0Ohx7X2GJY25BNxOJW9zq1mjwc6L8bcbqWHYU0dnR8VfOzU-28NOEEwCdGn0lKfH8ZM-RaGeVgJ-eWRBTvUg3A8Ulg1GZ2yUgwdlHjf9eSpelSxtz-et1AyqrQJzrZc3VDVXoovSIDPMyL5R-i2ok7azIP6UTHZ9adrNaPQ4Z7FA4k757L-q2sw-KZGKOC3Y5rZCCAp", "provider"=>"facebook"}
+  [1m[36mAuthorization Load (119.9ms)[0m  [1mSELECT "authorizations".* FROM "authorizations" WHERE "authorizations"."provider" = 'facebook' AND "authorizations"."uid" = '1805970805' LIMIT 1[0m
+Completed 500 Internal Server Error in 121ms
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/models/authorization.rb:19:in `find_or_create'
+  app/controllers/sessions_controller.rb:10:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.0ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/auth/facebook/callback?state=c57b9fcea487cc3bbf96b8813dc3e040a7b2b36b26a00009&code=AQDaGgYmkIBPOVICO0Ohx7X2GJY25BNxOJW9zq1mjwc6L8bcbqWHYU0dnR8VfOzU-28NOEEwCdGn0lKfH8ZM-RaGeVgJ-eWRBTvUg3A8Ulg1GZ2yUgwdlHjf9eSpelSxtz-et1AyqrQJzrZc3VDVXoovSIDPMyL5R-i2ok7azIP6UTHZ9adrNaPQ4Z7FA4k757L-q2sw-KZGKOC3Y5rZCCAp" for 89.71.241.156 at 2012-11-18 19:37:42 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"c57b9fcea487cc3bbf96b8813dc3e040a7b2b36b26a00009", "code"=>"AQDaGgYmkIBPOVICO0Ohx7X2GJY25BNxOJW9zq1mjwc6L8bcbqWHYU0dnR8VfOzU-28NOEEwCdGn0lKfH8ZM-RaGeVgJ-eWRBTvUg3A8Ulg1GZ2yUgwdlHjf9eSpelSxtz-et1AyqrQJzrZc3VDVXoovSIDPMyL5R-i2ok7azIP6UTHZ9adrNaPQ4Z7FA4k757L-q2sw-KZGKOC3Y5rZCCAp", "provider"=>"facebook"}
+  [1m[36mAuthorization Load (43.9ms)[0m  [1mSELECT "authorizations".* FROM "authorizations" WHERE "authorizations"."provider" = 'facebook' AND "authorizations"."uid" = '1805970805' LIMIT 1[0m
+Completed 500 Internal Server Error in 384ms
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/models/authorization.rb:19:in `find_or_create'
+  app/controllers/sessions_controller.rb:10:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.3ms)
+
+
+Started GET "/" for 89.71.241.156 at 2012-11-18 19:37:46 +0100
+Processing by BooksController#index as HTML
+  [1m[35mBook Load (117.4ms)[0m  SELECT "books".* FROM "books" 
+  [1m[36mActsAsTaggableOn::Tag Load (95.7ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 9 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (71.9ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 10 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (8.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 11 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (18.6ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 12 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (11.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 13 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  Rendered books/index.html.erb within layouts/application (942.9ms)
+Completed 200 OK in 6813ms (Views: 6269.2ms | ActiveRecord: 532.0ms)
+
+
+Started GET "/" for 89.71.241.156 at 2012-11-18 19:37:53 +0100
+Processing by BooksController#index as HTML
+  [1m[35mBook Load (43.8ms)[0m  SELECT "books".* FROM "books" 
+  [1m[36mActsAsTaggableOn::Tag Load (11.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 9 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (9.5ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 10 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (4.8ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 11 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (5.9ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 12 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (46.5ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 13 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  Rendered books/index.html.erb within layouts/application (90.9ms)
+Completed 200 OK in 149ms (Views: 26.4ms | ActiveRecord: 121.7ms)
+
+
+Started GET "/auth/facebook" for 89.71.241.156 at 2012-11-18 19:38:00 +0100
+
+
+Started GET "/auth/facebook/callback?state=ffe0953e97ff1f1cca25cad96cf0e7faa29751783a5112f5&code=AQCxaG1MO1hh5gSEI0Y7IOoNwjyQ_6yCFGYG5ra_PD8VH5ogh8UXCTdyOOWYwVUGFog6aByH0xoN-nED9dJBR-kd62V1VImmBLlgP1OOjQF4Sw0VgrFO_DQ671taCAqzhw-w7aWuB78xj2vZ5I1VqBpqPJC5zK_4bvYmwdOcZ-1t5xJ2Ri4RUVKRlfh7XgcfmrocGwH25eu597wz4-FiKXJ0" for 89.71.241.156 at 2012-11-18 19:38:01 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"ffe0953e97ff1f1cca25cad96cf0e7faa29751783a5112f5", "code"=>"AQCxaG1MO1hh5gSEI0Y7IOoNwjyQ_6yCFGYG5ra_PD8VH5ogh8UXCTdyOOWYwVUGFog6aByH0xoN-nED9dJBR-kd62V1VImmBLlgP1OOjQF4Sw0VgrFO_DQ671taCAqzhw-w7aWuB78xj2vZ5I1VqBpqPJC5zK_4bvYmwdOcZ-1t5xJ2Ri4RUVKRlfh7XgcfmrocGwH25eu597wz4-FiKXJ0", "provider"=>"facebook"}
+  [1m[35mAuthorization Load (63.7ms)[0m  SELECT "authorizations".* FROM "authorizations" WHERE "authorizations"."provider" = 'facebook' AND "authorizations"."uid" = '1805970805' LIMIT 1
+Completed 500 Internal Server Error in 65ms
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/models/authorization.rb:19:in `find_or_create'
+  app/controllers/sessions_controller.rb:10:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.7ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 89.71.241.156 at 2012-11-18 19:39:44 +0100
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (74.3ms)[0m  [1mSELECT "books".* FROM "books" [0m
+  [1m[35mActsAsTaggableOn::Tag Load (119.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 9 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (19.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 10 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (14.7ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 11 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (52.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 12 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (42.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 13 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered books/index.html.erb within layouts/application (692.1ms)
+Completed 200 OK in 7076ms (Views: 6670.6ms | ActiveRecord: 393.1ms)
+
+
+Started GET "/" for 89.71.241.156 at 2012-11-18 19:39:52 +0100
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (46.0ms)[0m  [1mSELECT "books".* FROM "books" [0m
+  [1m[35mActsAsTaggableOn::Tag Load (77.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 9 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (40.6ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 10 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (118.0ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 11 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (48.0ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 12 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (41.0ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 13 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered books/index.html.erb within layouts/application (338.1ms)
+Completed 200 OK in 478ms (Views: 106.7ms | ActiveRecord: 370.8ms)
+
+
+Started GET "/" for 89.71.241.156 at 2012-11-18 19:39:53 +0100
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (44.4ms)[0m  [1mSELECT "books".* FROM "books" [0m
+  [1m[35mActsAsTaggableOn::Tag Load (3.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 9 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (15.8ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 10 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (10.5ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 11 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (5.4ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 12 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (4.9ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 13 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered books/index.html.erb within layouts/application (53.1ms)
+Completed 200 OK in 152ms (Views: 66.6ms | ActiveRecord: 84.5ms)
+
+
+Started GET "/auth/facebook" for 89.71.241.156 at 2012-11-18 19:39:58 +0100
+
+
+Started GET "/auth/facebook/callback?state=b4f8efc7dc33d49145b0db9f70ae85ec53f8e43ec9a6d0b8&code=AQD97PUEoBHvkRyFSguQNRqSQNHFAyG5Zpc0gHnaY3_e0Y8S9nvMfPa2C0qUVskUNJqhv1Dt3Hn2cLz5HmBFnxNir93eVYb2_lqsmFq5_g1Qaw1BEfLgO8ab3cZDNkKdXNdCBS-jHV1j8kNsjTMP2xCKBYzfPjQC1Ft0FixA6jTeJABFnKTtNa7kaAKhynRa6HLsNWgEL-YJKv49qnl0F9rU" for 89.71.241.156 at 2012-11-18 19:39:59 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"b4f8efc7dc33d49145b0db9f70ae85ec53f8e43ec9a6d0b8", "code"=>"AQD97PUEoBHvkRyFSguQNRqSQNHFAyG5Zpc0gHnaY3_e0Y8S9nvMfPa2C0qUVskUNJqhv1Dt3Hn2cLz5HmBFnxNir93eVYb2_lqsmFq5_g1Qaw1BEfLgO8ab3cZDNkKdXNdCBS-jHV1j8kNsjTMP2xCKBYzfPjQC1Ft0FixA6jTeJABFnKTtNa7kaAKhynRa6HLsNWgEL-YJKv49qnl0F9rU", "provider"=>"facebook"}
+  [1m[36mAuthorization Load (3.7ms)[0m  [1mSELECT "authorizations".* FROM "authorizations" WHERE "authorizations"."provider" = 'facebook' AND "authorizations"."uid" = '1805970805' LIMIT 1[0m
+Completed 500 Internal Server Error in 67ms
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/models/authorization.rb:19:in `find_or_create'
+  app/controllers/sessions_controller.rb:10:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.2ms)
+
+
+Started GET "/auth/facebook/callback?state=b4f8efc7dc33d49145b0db9f70ae85ec53f8e43ec9a6d0b8&code=AQD97PUEoBHvkRyFSguQNRqSQNHFAyG5Zpc0gHnaY3_e0Y8S9nvMfPa2C0qUVskUNJqhv1Dt3Hn2cLz5HmBFnxNir93eVYb2_lqsmFq5_g1Qaw1BEfLgO8ab3cZDNkKdXNdCBS-jHV1j8kNsjTMP2xCKBYzfPjQC1Ft0FixA6jTeJABFnKTtNa7kaAKhynRa6HLsNWgEL-YJKv49qnl0F9rU" for 89.71.241.156 at 2012-11-18 19:40:38 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"b4f8efc7dc33d49145b0db9f70ae85ec53f8e43ec9a6d0b8", "code"=>"AQD97PUEoBHvkRyFSguQNRqSQNHFAyG5Zpc0gHnaY3_e0Y8S9nvMfPa2C0qUVskUNJqhv1Dt3Hn2cLz5HmBFnxNir93eVYb2_lqsmFq5_g1Qaw1BEfLgO8ab3cZDNkKdXNdCBS-jHV1j8kNsjTMP2xCKBYzfPjQC1Ft0FixA6jTeJABFnKTtNa7kaAKhynRa6HLsNWgEL-YJKv49qnl0F9rU", "provider"=>"facebook"}
+  [1m[35mAuthorization Load (45.8ms)[0m  SELECT "authorizations".* FROM "authorizations" WHERE "authorizations"."provider" = 'facebook' AND "authorizations"."uid" = '1805970805' LIMIT 1
+Completed 500 Internal Server Error in 340ms
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/models/authorization.rb:19:in `find_or_create'
+  app/controllers/sessions_controller.rb:10:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.1ms)
+
+
+Started GET "/auth/facebook/callback?state=b4f8efc7dc33d49145b0db9f70ae85ec53f8e43ec9a6d0b8&code=AQD97PUEoBHvkRyFSguQNRqSQNHFAyG5Zpc0gHnaY3_e0Y8S9nvMfPa2C0qUVskUNJqhv1Dt3Hn2cLz5HmBFnxNir93eVYb2_lqsmFq5_g1Qaw1BEfLgO8ab3cZDNkKdXNdCBS-jHV1j8kNsjTMP2xCKBYzfPjQC1Ft0FixA6jTeJABFnKTtNa7kaAKhynRa6HLsNWgEL-YJKv49qnl0F9rU" for 89.71.241.156 at 2012-11-18 19:40:43 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"b4f8efc7dc33d49145b0db9f70ae85ec53f8e43ec9a6d0b8", "code"=>"AQD97PUEoBHvkRyFSguQNRqSQNHFAyG5Zpc0gHnaY3_e0Y8S9nvMfPa2C0qUVskUNJqhv1Dt3Hn2cLz5HmBFnxNir93eVYb2_lqsmFq5_g1Qaw1BEfLgO8ab3cZDNkKdXNdCBS-jHV1j8kNsjTMP2xCKBYzfPjQC1Ft0FixA6jTeJABFnKTtNa7kaAKhynRa6HLsNWgEL-YJKv49qnl0F9rU", "provider"=>"facebook"}
+  [1m[36mAuthorization Load (17.6ms)[0m  [1mSELECT "authorizations".* FROM "authorizations" WHERE "authorizations"."provider" = 'facebook' AND "authorizations"."uid" = '1805970805' LIMIT 1[0m
+Completed 500 Internal Server Error in 19ms
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/models/authorization.rb:19:in `find_or_create'
+  app/controllers/sessions_controller.rb:10:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.4ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 89.71.241.156 at 2012-11-18 19:41:42 +0100
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (48.3ms)[0m  [1mSELECT "books".* FROM "books" [0m
+  [1m[35mActsAsTaggableOn::Tag Load (42.7ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 9 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (119.4ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 10 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (7.7ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 11 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (7.9ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 12 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (47.7ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 13 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered books/index.html.erb within layouts/application (663.0ms)
+Completed 200 OK in 4645ms (Views: 4286.2ms | ActiveRecord: 346.8ms)
+
+
+Started GET "/auth/facebook" for 89.71.241.156 at 2012-11-18 19:41:51 +0100
+
+
+Started GET "/auth/facebook/callback?state=f35cb5db77c2b6ed2148afa8d417703dc5865598dc517ca0&code=AQC-QA4jtedEwaZSFO3JVkLCVtuv3XxHenZiW6VHJmOloyEYvVuXNNOsPeRz8qtdP5WpKB6kpLw2JC72BeUMsnsUoRoHpbKuKvyCmFNAcKE8epT4gvqW3nxiefnQOyTKJAuxUm882ynCzKukldSJ2VjVKYDehOKeqjnueuS9Dx7nQ38y0cJQ7nXlqzkdzTK0oNX5vNKCQNsxgbDW82_MC7pZ" for 89.71.241.156 at 2012-11-18 19:41:52 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"f35cb5db77c2b6ed2148afa8d417703dc5865598dc517ca0", "code"=>"AQC-QA4jtedEwaZSFO3JVkLCVtuv3XxHenZiW6VHJmOloyEYvVuXNNOsPeRz8qtdP5WpKB6kpLw2JC72BeUMsnsUoRoHpbKuKvyCmFNAcKE8epT4gvqW3nxiefnQOyTKJAuxUm882ynCzKukldSJ2VjVKYDehOKeqjnueuS9Dx7nQ38y0cJQ7nXlqzkdzTK0oNX5vNKCQNsxgbDW82_MC7pZ", "provider"=>"facebook"}
+  [1m[36mAuthorization Load (45.8ms)[0m  [1mSELECT "authorizations".* FROM "authorizations" WHERE "authorizations"."provider" = 'facebook' AND "authorizations"."uid" = '1805970805' LIMIT 1[0m
+Completed 500 Internal Server Error in 182ms
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/models/authorization.rb:19:in `find_or_create'
+  app/controllers/sessions_controller.rb:10:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.4ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 89.71.241.156 at 2012-11-18 22:38:55 +0100
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (110.2ms)[0m  [1mSELECT "books".* FROM "books" [0m
+  [1m[35mActsAsTaggableOn::Tag Load (42.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 9 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (39.5ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 10 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (40.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 11 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (40.4ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 12 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (40.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 13 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered books/index.html.erb within layouts/application (756.3ms)
+Completed 200 OK in 1119ms (Views: 594.5ms | ActiveRecord: 513.0ms)
+
+
+Started GET "/auth/facebook" for 89.71.241.156 at 2012-11-18 22:39:00 +0100
+
+
+Started GET "/auth/facebook/callback?state=ec70fae0ea7bf45564c41aa3dce5ae6b2708b22a5bd6e406&code=AQBEulxb1kTOBBzPV_xB6ghx97BeWl5CfbdWf4ldiDKkvHU2lNexICWfvYLVh2mQFkSM2RWkI7lGVbF_dtBsykp0Et90DS1A8ENW6vzYzkfSD4sgD16olRfk91L5K3eac7ZF3FRdY-A9AhuFQlJSRWx16-VcBFk5suAnQIFlq4PEmhwjPLecNj7T_77GABfRnyJUXFZ5-ANHSFyonakxKJw5" for 89.71.241.156 at 2012-11-18 22:39:00 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"ec70fae0ea7bf45564c41aa3dce5ae6b2708b22a5bd6e406", "code"=>"AQBEulxb1kTOBBzPV_xB6ghx97BeWl5CfbdWf4ldiDKkvHU2lNexICWfvYLVh2mQFkSM2RWkI7lGVbF_dtBsykp0Et90DS1A8ENW6vzYzkfSD4sgD16olRfk91L5K3eac7ZF3FRdY-A9AhuFQlJSRWx16-VcBFk5suAnQIFlq4PEmhwjPLecNj7T_77GABfRnyJUXFZ5-ANHSFyonakxKJw5", "provider"=>"facebook"}
+  [1m[36mAuthorization Load (73.5ms)[0m  [1mSELECT "authorizations".* FROM "authorizations" WHERE "authorizations"."provider" = 'facebook' AND "authorizations"."uid" = '1805970805' LIMIT 1[0m
+Completed 500 Internal Server Error in 276ms
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/models/authorization.rb:19:in `find_or_create'
+  app/controllers/sessions_controller.rb:10:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.3ms)
+
+
+Started GET "/auth" for 89.71.241.156 at 2012-11-18 22:39:11 +0100
+
+ActionController::RoutingError (No route matches [GET] "/auth"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.1) lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  thin (1.5.0) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.0) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.0) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.0) lib/thin/connection.rb:54:in `process'
+  thin (1.5.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.0) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.0) lib/eventmachine.rb:187:in `run'
+  thin (1.5.0) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.0) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.8) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.8) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.8) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.8) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/auth/facebook" for 89.71.241.156 at 2012-11-18 22:39:23 +0100
+
+
+Started GET "/auth/facebook/callback?state=ea573f555aad06172b0f59f63af4c608cf79ad7ce0e4d10a&code=AQDSLGC1OkZqE0dT6aYtOSQnCa-OmoWwROVRJkkfGD0qs7C6YQg_lPCPJwyGRfL7qXuQOaBdZPQiCxq9_T4kCoLCfquHCoGumsQutiZ7528Fkg5MK6a8cQ3M8LBimr8zbbnNfO5gcfsTlBpsBuihw7kwWCfxLSUgMl9ia1RGOrM0fDvJ8VphPlW1wUowRlOML09VzrpXCCckiA3ILmRBMLSd" for 89.71.241.156 at 2012-11-18 22:39:24 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"ea573f555aad06172b0f59f63af4c608cf79ad7ce0e4d10a", "code"=>"AQDSLGC1OkZqE0dT6aYtOSQnCa-OmoWwROVRJkkfGD0qs7C6YQg_lPCPJwyGRfL7qXuQOaBdZPQiCxq9_T4kCoLCfquHCoGumsQutiZ7528Fkg5MK6a8cQ3M8LBimr8zbbnNfO5gcfsTlBpsBuihw7kwWCfxLSUgMl9ia1RGOrM0fDvJ8VphPlW1wUowRlOML09VzrpXCCckiA3ILmRBMLSd", "provider"=>"facebook"}
+  [1m[35mAuthorization Load (119.3ms)[0m  SELECT "authorizations".* FROM "authorizations" WHERE "authorizations"."provider" = 'facebook' AND "authorizations"."uid" = '1805970805' LIMIT 1
+Completed 500 Internal Server Error in 121ms
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/models/authorization.rb:19:in `find_or_create'
+  app/controllers/sessions_controller.rb:10:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.0ms)
+
+
+Started GET "/auth/facebook" for 89.71.241.156 at 2012-11-18 22:39:47 +0100
+
+
+Started GET "/auth/facebook/callback?state=4b6a580fd6bec65290df35b167f838fe739d9792322a4176&code=AQDPyUwMaVLc3gOTiLxD1Kskgpu9VoN_8Gl1xgu503aBwZ_PDobIy1453dmZmU8Qu5MlA5DvT5oIrx72uVfjd-kKiQcLnEkb5fsnHuudgfEiRzT0tAbzizYdYR96XBe6H4CUY2IUiJv9jY9orUHp1oQh8T2ZBMCTsyeD9G67mqgJG_RL9PaHOCauKZfs4MFNVdiYgTI68ZEr4kMcOkHOC2cW" for 89.71.241.156 at 2012-11-18 22:40:03 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"4b6a580fd6bec65290df35b167f838fe739d9792322a4176", "code"=>"AQDPyUwMaVLc3gOTiLxD1Kskgpu9VoN_8Gl1xgu503aBwZ_PDobIy1453dmZmU8Qu5MlA5DvT5oIrx72uVfjd-kKiQcLnEkb5fsnHuudgfEiRzT0tAbzizYdYR96XBe6H4CUY2IUiJv9jY9orUHp1oQh8T2ZBMCTsyeD9G67mqgJG_RL9PaHOCauKZfs4MFNVdiYgTI68ZEr4kMcOkHOC2cW", "provider"=>"facebook"}
+  [1m[36mAuthorization Load (236.7ms)[0m  [1mSELECT "authorizations".* FROM "authorizations" WHERE "authorizations"."provider" = 'facebook' AND "authorizations"."uid" = '1805970805' LIMIT 1[0m
+Completed 500 Internal Server Error in 238ms
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/models/authorization.rb:19:in `find_or_create'
+  app/controllers/sessions_controller.rb:10:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.1ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/auth/facebook/callback?state=4b6a580fd6bec65290df35b167f838fe739d9792322a4176&code=AQA5LYaU2-9AGHvBXf3ebD_z4HxGxXj1XAgI8nqqxQ8LG09y2kl7glbw9uzXDC7nExIcT5l7-brDJiYYvZELvVLpjxONbKhT9z4otBYSyQrO-eL8hAP2FZ8Tqwoje120YcxKDAcL8-gUwdJilsxRUP2SMBeT59ANoXnSYC_Fk59iPQo2LLJML4qIZNGTitHgyES3z_lpHokUkZm5HAQQOIH5" for 89.71.241.156 at 2012-11-18 22:46:13 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"4b6a580fd6bec65290df35b167f838fe739d9792322a4176", "code"=>"AQA5LYaU2-9AGHvBXf3ebD_z4HxGxXj1XAgI8nqqxQ8LG09y2kl7glbw9uzXDC7nExIcT5l7-brDJiYYvZELvVLpjxONbKhT9z4otBYSyQrO-eL8hAP2FZ8Tqwoje120YcxKDAcL8-gUwdJilsxRUP2SMBeT59ANoXnSYC_Fk59iPQo2LLJML4qIZNGTitHgyES3z_lpHokUkZm5HAQQOIH5", "provider"=>"facebook"}
+  [1m[35mAuthorization Load (237.9ms)[0m  SELECT "authorizations".* FROM "authorizations" WHERE "authorizations"."provider" = 'facebook' AND "authorizations"."uid" = '1805970805' LIMIT 1
+Completed 500 Internal Server Error in 239ms
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/models/authorization.rb:19:in `find_or_create'
+  app/controllers/sessions_controller.rb:10:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.2ms)
+
+
+Started GET "/" for 89.71.241.156 at 2012-11-18 22:46:34 +0100
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (120.8ms)[0m  [1mSELECT "books".* FROM "books" [0m
+  [1m[35mActsAsTaggableOn::Tag Load (118.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 9 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (77.0ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 10 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (40.9ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 11 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (41.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 12 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (40.7ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 13 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered books/index.html.erb within layouts/application (334.1ms)
+Completed 200 OK in 509ms (Views: 69.7ms | ActiveRecord: 438.6ms)
+
+
+Started GET "/auth/facebook" for 89.71.241.156 at 2012-11-18 22:46:36 +0100
+
+
+Started GET "/auth/facebook/callback?state=d812326e9794b5251b221a442839948bb766af450614a734&code=AQBx-EYD9_Bv9T1hlHWkOR36gwwytp1Q087OyDQ-wBBjFFX3vrCQXDdfF4AGn_pa41EOqsok7YMJx35r5CRNnp_Yglej4siIRtf1enK6xpj8v-2_fJHweBe3eVvfQkXY02au6IFNUsGKqMeHC43Uu5gZD9rei0PhW52OUyJk-5wjlC98S1K1npqeS_Y-WajJdnWv7qlWzgACWPEAPtWFqpY8" for 89.71.241.156 at 2012-11-18 22:46:37 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"d812326e9794b5251b221a442839948bb766af450614a734", "code"=>"AQBx-EYD9_Bv9T1hlHWkOR36gwwytp1Q087OyDQ-wBBjFFX3vrCQXDdfF4AGn_pa41EOqsok7YMJx35r5CRNnp_Yglej4siIRtf1enK6xpj8v-2_fJHweBe3eVvfQkXY02au6IFNUsGKqMeHC43Uu5gZD9rei0PhW52OUyJk-5wjlC98S1K1npqeS_Y-WajJdnWv7qlWzgACWPEAPtWFqpY8", "provider"=>"facebook"}
+  [1m[36mAuthorization Load (120.9ms)[0m  [1mSELECT "authorizations".* FROM "authorizations" WHERE "authorizations"."provider" = 'facebook' AND "authorizations"."uid" = '1805970805' LIMIT 1[0m
+Completed 500 Internal Server Error in 122ms
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/models/authorization.rb:19:in `find_or_create'
+  app/controllers/sessions_controller.rb:10:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (48.4ms)
+
+
+Started GET "/auth/facebook" for 89.71.241.156 at 2012-11-18 22:46:46 +0100
+
+
+Started GET "/auth/facebook/callback?state=d1916f61446e132fde63a4128cd73be91828c0d467299246&code=AQDw19PUAmdl_UXYIB87oT1F8t1IwGO4AF3-ErsSEM7MpxZFs3zR6BIg7dtPKE6_hJguHeVVuHhTMaTzy984HIYwKFp7tz11U6f8K9d-tJdy8U0UXfbNreOgw9ct8IA1JW9142hYSOTsesD4ONTWFomsYjtLZZaAZgF1sdvy86bmhoNr6XINtUTjJaz109zFg6bPtxC0hVX8JTjjqeYqYZO9" for 89.71.241.156 at 2012-11-18 22:46:47 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"d1916f61446e132fde63a4128cd73be91828c0d467299246", "code"=>"AQDw19PUAmdl_UXYIB87oT1F8t1IwGO4AF3-ErsSEM7MpxZFs3zR6BIg7dtPKE6_hJguHeVVuHhTMaTzy984HIYwKFp7tz11U6f8K9d-tJdy8U0UXfbNreOgw9ct8IA1JW9142hYSOTsesD4ONTWFomsYjtLZZaAZgF1sdvy86bmhoNr6XINtUTjJaz109zFg6bPtxC0hVX8JTjjqeYqYZO9", "provider"=>"facebook"}
+  [1m[35mAuthorization Load (78.4ms)[0m  SELECT "authorizations".* FROM "authorizations" WHERE "authorizations"."provider" = 'facebook' AND "authorizations"."uid" = '1805970805' LIMIT 1
+Completed 500 Internal Server Error in 79ms
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/models/authorization.rb:19:in `find_or_create'
+  app/controllers/sessions_controller.rb:10:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.4ms)
+
+
+Started GET "/auth/facebook" for 89.71.241.156 at 2012-11-18 22:46:48 +0100
+
+
+Started GET "/auth/facebook/callback?state=b0602d9b994e0a889300986ce66beecccd3fdb9123993f89&code=AQBbVnrqXrwnJraHdoQTvKpdgvPEZ2ugcD3PJ4F4zpoRpJGi-waX_kygTd8VNH1AiNKWe39mddoCshD_ui232bzTAdJkLuMgEkdWGpF6UhNbFO3JU5UY0xq9uikB7Ptm-E3Dy90EM6ZzbgY62cDJ1hIqXDkfFTj3Pp7QWFlpnhB2TRLRttDl-lo5HUChQ2AuTn8LXbXC63-nBA1Fdqkf0qrc" for 89.71.241.156 at 2012-11-18 22:46:49 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"b0602d9b994e0a889300986ce66beecccd3fdb9123993f89", "code"=>"AQBbVnrqXrwnJraHdoQTvKpdgvPEZ2ugcD3PJ4F4zpoRpJGi-waX_kygTd8VNH1AiNKWe39mddoCshD_ui232bzTAdJkLuMgEkdWGpF6UhNbFO3JU5UY0xq9uikB7Ptm-E3Dy90EM6ZzbgY62cDJ1hIqXDkfFTj3Pp7QWFlpnhB2TRLRttDl-lo5HUChQ2AuTn8LXbXC63-nBA1Fdqkf0qrc", "provider"=>"facebook"}
+  [1m[36mAuthorization Load (80.1ms)[0m  [1mSELECT "authorizations".* FROM "authorizations" WHERE "authorizations"."provider" = 'facebook' AND "authorizations"."uid" = '1805970805' LIMIT 1[0m
+Completed 500 Internal Server Error in 81ms
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/models/authorization.rb:19:in `find_or_create'
+  app/controllers/sessions_controller.rb:10:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.3ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 89.71.241.156 at 2012-11-18 22:47:28 +0100
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (114.2ms)[0m  [1mSELECT "books".* FROM "books" [0m
+  [1m[35mActsAsTaggableOn::Tag Load (39.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 9 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (41.5ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 10 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (41.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 11 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (41.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 12 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (41.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 13 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered books/index.html.erb within layouts/application (586.1ms)
+Completed 200 OK in 918ms (Views: 391.1ms | ActiveRecord: 518.3ms)
+
+
+Started GET "/auth/facebook" for 89.71.241.156 at 2012-11-18 22:47:33 +0100
+(facebook) Request phase initiated.
+
+
+Started GET "/" for 89.71.241.156 at 2012-11-18 22:49:13 +0100
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (237.6ms)[0m  [1mSELECT "books".* FROM "books" [0m
+  [1m[35mActsAsTaggableOn::Tag Load (47.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 9 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (75.7ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 10 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (40.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 11 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (40.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 12 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (40.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 13 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered books/index.html.erb within layouts/application (271.8ms)
+Completed 200 OK in 659ms (Views: 176.4ms | ActiveRecord: 481.2ms)
+
+
+Started GET "/auth/facebook" for 89.71.241.156 at 2012-11-18 22:49:15 +0100
+(facebook) Request phase initiated.
+
+
+Started GET "/" for 89.71.241.156 at 2012-11-18 22:49:55 +0100
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (120.0ms)[0m  [1mSELECT "books".* FROM "books" [0m
+  [1m[35mActsAsTaggableOn::Tag Load (120.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 9 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (76.4ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 10 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (40.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 11 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (40.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 12 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (40.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 13 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered books/index.html.erb within layouts/application (336.3ms)
+Completed 200 OK in 513ms (Views: 75.1ms | ActiveRecord: 437.1ms)
+
+
+Started GET "/auth/facebook" for 89.71.241.156 at 2012-11-18 22:49:57 +0100
+(facebook) Request phase initiated.
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 89.71.241.156 at 2012-11-18 22:59:20 +0100
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (107.6ms)[0m  [1mSELECT "books".* FROM "books" [0m
+  [1m[35mActsAsTaggableOn::Tag Load (42.0ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 9 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (41.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 10 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (41.9ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 11 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (40.4ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 12 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (40.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 13 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered books/index.html.erb within layouts/application (697.3ms)
+Completed 200 OK in 1077ms (Views: 549.2ms | ActiveRecord: 515.8ms)
+
+
+Started GET "/auth/facebook" for 89.71.241.156 at 2012-11-18 22:59:24 +0100
+(facebook) Request phase initiated.
+
+
+Started GET "/" for 89.71.241.156 at 2012-11-18 22:59:37 +0100
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (120.3ms)[0m  [1mSELECT "books".* FROM "books" [0m
+  [1m[35mActsAsTaggableOn::Tag Load (120.0ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 9 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (75.6ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 10 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (39.7ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 11 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (39.6ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 12 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (39.9ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 13 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered books/index.html.erb within layouts/application (336.3ms)
+Completed 200 OK in 514ms (Views: 77.2ms | ActiveRecord: 435.0ms)
+
+
+Started GET "/auth/facebook" for 89.71.241.156 at 2012-11-18 22:59:39 +0100
+(facebook) Request phase initiated.
+Connecting to database specified by database.yml
+
+
+Started DELETE "/books/10" for 89.71.241.156 at 2012-11-18 22:59:55 +0100
+Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"4j7otF5xXGkQJPG8cwHNlO9d3Dc+4dR7+OOHlWTDGHs=", "id"=>"10"}
+  [1m[36mBook Load (114.1ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1[0m  [["id", "10"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mActsAsTaggableOn::Tagging Load (0.1ms)[0m  [1mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = 10 AND "taggings"."taggable_type" = 'Book'[0m
+  [1m[35mActsAsTaggableOn::Tagging Load (0.1ms)[0m  SELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = 10 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags')
+  [1m[36mSQL (72.9ms)[0m  [1mDELETE FROM "books" WHERE "books"."id" = ?[0m  [["id", 10]]
+  [1m[35m (192.9ms)[0m  commit transaction
+Redirected to http://sigma.ug.edu.pl:9875/books
+Completed 302 Found in 517ms (ActiveRecord: 421.3ms)
+
+
+Started GET "/books" for 89.71.241.156 at 2012-11-18 22:59:56 +0100
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (118.6ms)[0m  [1mSELECT "books".* FROM "books" [0m
+  [1m[35mActsAsTaggableOn::Tag Load (79.0ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 9 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (39.5ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 11 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (40.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 12 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (40.4ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 13 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  Rendered books/index.html.erb within layouts/application (467.8ms)
+Completed 200 OK in 787ms (Views: 309.7ms | ActiveRecord: 475.6ms)
+
+
+Started DELETE "/books/11" for 89.71.241.156 at 2012-11-18 23:00:00 +0100
+Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"4j7otF5xXGkQJPG8cwHNlO9d3Dc+4dR7+OOHlWTDGHs=", "id"=>"11"}
+  [1m[35mBook Load (120.5ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1  [["id", "11"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mActsAsTaggableOn::Tagging Load (78.8ms)[0m  SELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = 11 AND "taggings"."taggable_type" = 'Book'
+  [1m[36mActsAsTaggableOn::Tagging Load (0.1ms)[0m  [1mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = 11 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags')[0m
+  [1m[35mSQL (75.4ms)[0m  DELETE FROM "books" WHERE "books"."id" = ?  [["id", 11]]
+  [1m[36m (239.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://sigma.ug.edu.pl:9875/books
+Completed 302 Found in 559ms (ActiveRecord: 514.5ms)
+
+
+Started GET "/books" for 89.71.241.156 at 2012-11-18 23:00:00 +0100
+Processing by BooksController#index as HTML
+  [1m[35mBook Load (118.6ms)[0m  SELECT "books".* FROM "books" 
+  [1m[36mActsAsTaggableOn::Tag Load (120.7ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 9 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tag Load (76.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 12 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (40.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 13 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  Rendered books/index.html.erb within layouts/application (249.8ms)
+Completed 200 OK in 425ms (Views: 68.3ms | ActiveRecord: 355.6ms)
+
+
+Started DELETE "/books/11" for 89.71.241.156 at 2012-11-18 23:00:02 +0100
+Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"4j7otF5xXGkQJPG8cwHNlO9d3Dc+4dR7+OOHlWTDGHs=", "id"=>"11"}
+  [1m[35mBook Load (118.1ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1  [["id", "11"]]
+Completed 500 Internal Server Error in 119ms
+
+ActiveRecord::RecordNotFound (Couldn't find Book with id=11):
+  app/controllers/books_controller.rb:85:in `destroy'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.5ms)
+
+
+Started DELETE "/books/12" for 89.71.241.156 at 2012-11-18 23:00:08 +0100
+Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"4j7otF5xXGkQJPG8cwHNlO9d3Dc+4dR7+OOHlWTDGHs=", "id"=>"12"}
+  [1m[36mBook Load (117.5ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1[0m  [["id", "12"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mActsAsTaggableOn::Tagging Load (38.9ms)[0m  [1mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = 12 AND "taggings"."taggable_type" = 'Book'[0m
+  [1m[35mActsAsTaggableOn::Tagging Load (0.1ms)[0m  SELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = 12 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags')
+  [1m[36mSQL (38.0ms)[0m  [1mDELETE FROM "books" WHERE "books"."id" = ?[0m  [["id", 12]]
+  [1m[35m (195.9ms)[0m  commit transaction
+Redirected to http://sigma.ug.edu.pl:9875/books
+Completed 302 Found in 395ms (ActiveRecord: 390.4ms)
+
+
+Started GET "/books" for 89.71.241.156 at 2012-11-18 23:00:09 +0100
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (118.0ms)[0m  [1mSELECT "books".* FROM "books" [0m
+  [1m[35mActsAsTaggableOn::Tag Load (119.8ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 9 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tag Load (75.4ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 13 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  Rendered books/index.html.erb within layouts/application (205.9ms)
+Completed 200 OK in 381ms (Views: 67.4ms | ActiveRecord: 313.2ms)
+
+
+Started DELETE "/books/13" for 89.71.241.156 at 2012-11-18 23:00:11 +0100
+Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"4j7otF5xXGkQJPG8cwHNlO9d3Dc+4dR7+OOHlWTDGHs=", "id"=>"13"}
+  [1m[35mBook Load (117.7ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1  [["id", "13"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mActsAsTaggableOn::Tagging Load (1.9ms)[0m  SELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = 13 AND "taggings"."taggable_type" = 'Book'
+  [1m[36mActsAsTaggableOn::Tagging Load (3.0ms)[0m  [1mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = 13 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags')[0m
+  [1m[35mSQL (40.4ms)[0m  DELETE FROM "books" WHERE "books"."id" = ?  [["id", 13]]
+  [1m[36m (232.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://sigma.ug.edu.pl:9875/books
+Completed 302 Found in 443ms (ActiveRecord: 395.9ms)
+
+
+Started GET "/books" for 89.71.241.156 at 2012-11-18 23:00:12 +0100
+Processing by BooksController#index as HTML
+  [1m[35mBook Load (118.9ms)[0m  SELECT "books".* FROM "books" 
+  [1m[36mActsAsTaggableOn::Tag Load (120.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 9 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  Rendered books/index.html.erb within layouts/application (126.8ms)
+Completed 200 OK in 339ms (Views: 99.3ms | ActiveRecord: 239.0ms)
+
+
+Started GET "/auth/facebook" for 89.71.241.156 at 2012-11-18 23:00:14 +0100
+Connecting to database specified by database.yml
+
+
+Started GET "/books" for 89.71.241.156 at 2012-11-18 23:01:11 +0100
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (107.7ms)[0m  [1mSELECT "books".* FROM "books" [0m
+  [1m[35mActsAsTaggableOn::Tag Load (39.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 9 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered books/index.html.erb within layouts/application (514.0ms)
+Completed 200 OK in 842ms (Views: 483.9ms | ActiveRecord: 345.8ms)
+
+
+Started GET "/" for 89.71.241.156 at 2012-11-18 23:01:16 +0100
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (120.2ms)[0m  [1mSELECT "books".* FROM "books" [0m
+  [1m[35mActsAsTaggableOn::Tag Load (120.5ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 9 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered books/index.html.erb within layouts/application (126.6ms)
+Completed 200 OK in 340ms (Views: 98.4ms | ActiveRecord: 240.7ms)
+
+
+Started GET "/auth/facebook" for 89.71.241.156 at 2012-11-18 23:01:18 +0100
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 89.71.241.156 at 2012-11-18 23:02:35 +0100
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (107.3ms)[0m  [1mSELECT "books".* FROM "books" [0m
+  [1m[35mActsAsTaggableOn::Tag Load (42.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 9 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered books/index.html.erb within layouts/application (514.1ms)
+Completed 200 OK in 853ms (Views: 492.3ms | ActiveRecord: 348.6ms)
+
+
+Started GET "/auth/facebook" for 89.71.241.156 at 2012-11-18 23:02:38 +0100
+(facebook) Request phase initiated.
+
+
+Started GET "/" for 89.71.241.156 at 2012-11-18 23:06:17 +0100
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (240.1ms)[0m  [1mSELECT "books".* FROM "books" [0m
+  [1m[35mActsAsTaggableOn::Tag Load (119.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 9 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered books/index.html.erb within layouts/application (127.4ms)
+Completed 200 OK in 465ms (Views: 105.1ms | ActiveRecord: 359.3ms)
+
+
+Started GET "/auth/facebook" for 89.71.241.156 at 2012-11-18 23:06:19 +0100
+(facebook) Request phase initiated.
+
+
+Started GET "/auth/facebook" for 89.71.241.156 at 2012-11-18 23:07:30 +0100
+(facebook) Request phase initiated.
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 89.71.241.156 at 2012-11-18 23:11:05 +0100
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (107.7ms)[0m  [1mSELECT "books".* FROM "books" [0m
+  [1m[35mActsAsTaggableOn::Tag Load (39.0ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 9 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered books/index.html.erb within layouts/application (507.5ms)
+Completed 200 OK in 885ms (Views: 528.1ms | ActiveRecord: 344.6ms)
+
+
+Started GET "/" for 89.71.241.156 at 2012-11-18 23:11:07 +0100
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (122.7ms)[0m  [1mSELECT "books".* FROM "books" [0m
+  [1m[35mActsAsTaggableOn::Tag Load (120.3ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 9 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered books/index.html.erb within layouts/application (126.8ms)
+Completed 200 OK in 343ms (Views: 98.7ms | ActiveRecord: 242.9ms)
+
+
+Started GET "/auth/facebook" for 89.71.241.156 at 2012-11-18 23:11:09 +0100
+(facebook) Request phase initiated.
+
+
+Started GET "/" for 89.71.241.156 at 2012-11-18 23:11:51 +0100
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (120.6ms)[0m  [1mSELECT "books".* FROM "books" [0m
+  [1m[35mActsAsTaggableOn::Tag Load (120.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 9 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered books/index.html.erb within layouts/application (126.8ms)
+Completed 200 OK in 341ms (Views: 98.8ms | ActiveRecord: 240.8ms)
+
+
+Started GET "/" for 89.71.241.156 at 2012-11-18 23:11:52 +0100
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (118.8ms)[0m  [1mSELECT "books".* FROM "books" [0m
+  [1m[35mActsAsTaggableOn::Tag Load (120.4ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 9 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered books/index.html.erb within layouts/application (126.7ms)
+Completed 200 OK in 339ms (Views: 98.2ms | ActiveRecord: 239.2ms)
+
+
+Started GET "/auth/facebook" for 89.71.241.156 at 2012-11-18 23:11:53 +0100
+(facebook) Request phase initiated.
+
+
+Started GET "/auth/facebook/callback?state=4d9cf00395130f667abcde2542008b2a240f983051f6a0fd&code=AQB6C_9lb68Re6gEtzks_YGQG7R9-3epRRP-rSGN4cJQHgPb3nMImF5iRwJQxxk6WLzsldNV_HGpGLQtpDO038DOF2IAdxoucSZyHmO9xWRRKz137OnQgUGVwuImPxjkts7xZNw06m8aPUwp8bm8eqE-mdgeVRo8R7_WJNi8a8GP2ooxWZDTBTa_9S05pAult12-DNs6Ps0rFYuT5Nwdri3x" for 89.71.241.156 at 2012-11-18 23:11:53 +0100
+(facebook) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"4d9cf00395130f667abcde2542008b2a240f983051f6a0fd", "code"=>"AQB6C_9lb68Re6gEtzks_YGQG7R9-3epRRP-rSGN4cJQHgPb3nMImF5iRwJQxxk6WLzsldNV_HGpGLQtpDO038DOF2IAdxoucSZyHmO9xWRRKz137OnQgUGVwuImPxjkts7xZNw06m8aPUwp8bm8eqE-mdgeVRo8R7_WJNi8a8GP2ooxWZDTBTa_9S05pAult12-DNs6Ps0rFYuT5Nwdri3x", "provider"=>"facebook"}
+  [1m[36mAuthorization Load (76.0ms)[0m  [1mSELECT "authorizations".* FROM "authorizations" WHERE "authorizations"."provider" = 'facebook' AND "authorizations"."uid" = '1805970805' LIMIT 1[0m
+Completed 500 Internal Server Error in 212ms
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/models/authorization.rb:19:in `find_or_create'
+  app/controllers/sessions_controller.rb:10:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.1ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/auth/facebook" for 89.71.241.156 at 2012-11-18 23:25:50 +0100
+(facebook) Request phase initiated.
+
+
+Started GET "/auth/facebook/callback?state=76efaafa33bee45e48431ca0baccbd776c3be63bcd7a64a0&code=AQDYe_KyDiLYT6b365sCctNkjBH49dRP-aLsihwGeNgz9l8bthB989z5RtMwzUSLdUyZoc0oNaTwd4gJmWaNzaeWF4w4Ka49Sqynf4k1gAVhtzvSk_2fMyU2RgIsXVwMy9F1l9Ec_hBicelPMmF8TsxWI-jPOEYPQ8dkvXiYq-5NoZLJOuXZwUWx8v67tCkZoNMY-2h0eY1ECb2i3gzQhHrk" for 89.71.241.156 at 2012-11-18 23:25:50 +0100
+(facebook) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"76efaafa33bee45e48431ca0baccbd776c3be63bcd7a64a0", "code"=>"AQDYe_KyDiLYT6b365sCctNkjBH49dRP-aLsihwGeNgz9l8bthB989z5RtMwzUSLdUyZoc0oNaTwd4gJmWaNzaeWF4w4Ka49Sqynf4k1gAVhtzvSk_2fMyU2RgIsXVwMy9F1l9Ec_hBicelPMmF8TsxWI-jPOEYPQ8dkvXiYq-5NoZLJOuXZwUWx8v67tCkZoNMY-2h0eY1ECb2i3gzQhHrk", "provider"=>"facebook"}
+  [1m[35mAuthorization Load (39.2ms)[0m  SELECT "authorizations".* FROM "authorizations" WHERE "authorizations"."provider" = 'facebook' AND "authorizations"."uid" = '1805970805' LIMIT 1
+Completed 500 Internal Server Error in 311ms
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/models/authorization.rb:19:in `find_or_create'
+  app/controllers/sessions_controller.rb:10:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.3ms)

@@ -1,9 +1,11 @@
 Library::Application.routes.draw do
+
   resources :books do
     member do
       get 'crop'
     end
   end
+  
   
   # get 'books/:id/crop', to: 'books#crop', as: :crop_book
 
