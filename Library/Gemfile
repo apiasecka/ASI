@@ -35,5 +35,5 @@ gem 'thin'
 gem 'rmagick', '~> 2.13.1'
 gem 'carrierwave', '~> 0.7.0'
 
-# gem 'omniauth'
-# gem 'omniauth-facebook'
+gem 'omniauth'
+gem 'omniauth-facebook'
