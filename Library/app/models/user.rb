@@ -1,7 +1,9 @@
 class User < ActiveRecord::Base
-  #attr_accessible :name
+  attr_accessor :email
   has_many :authorizations
+  attr_accessible :name, :email
   validates :name, :email, :presence => true
+  
   
   #def self.create_from_hash!(hash)
   #  create(:name => hash['user_info']['name'])

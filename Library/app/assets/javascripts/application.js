@@ -44,3 +44,25 @@ function updateCoords(c) {
 function clearCoords() {
   $('#coords .controls').val('');
 };
+
+function popupCenter(url, width, height, name) {
+  var left = (screen.width/2)-(width/2);
+  var top = (screen.height/2)-(height/2);
+  return window.open(url, name, "menubar=no,toolbar=no,status=no,width="+width+",height="+height+",toolbar=no,left="+left+",top="+top);
+}
+
+$("a.popup").click(function(e) {
+  popupCenter($(this).attr("href"), $(this).attr("data-width"), $(this).attr("data-height"), "authPopup");
+  e.stopPropagation(); return false;
+});
+
+$('a.login-popup').click(function(e) {
+    var width = 600, height = 400;
+    var left = (screen.width / 2) - (width / 2);
+    var top = (screen.height / 2) - (2 * height / 3);
+    var features = 'menubar=no,toolbar=no,status=no,width=' + width + ',height=' + height + ',toolbar=no,left=' + left + ',top=' + top;
+    var loginWindow = window.open('/auth/facebook', '_blank', features);
+    loginWindow.focus();
+    e.preventDefault();
+    return false;
+  });

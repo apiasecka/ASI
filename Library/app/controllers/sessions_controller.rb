@@ -23,4 +23,8 @@ class SessionsController < ApplicationController
     render :text => "Sorry, but you didn't allow access to our app!"
   end
   
+  def auth_hash
+    request.env['omniauth.auth']
+  end
+  
 end
