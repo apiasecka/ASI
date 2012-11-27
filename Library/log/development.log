@@ -5257,3 +5257,135 @@ Processing by BooksController#index as HTML
   [1m[35mActsAsTaggableOn::Tag Load (76.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 9 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
   Rendered books/index.html.erb within layouts/application (385.0ms)
 Completed 200 OK in 921ms (Views: 729.9ms | ActiveRecord: 178.6ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 153.19.5.120 at 2012-11-20 10:53:16 +0100
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (111.2ms)[0m  [1mSELECT "books".* FROM "books" [0m
+  [1m[35mActsAsTaggableOn::Tag Load (39.5ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 9 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered books/index.html.erb within layouts/application (557.9ms)
+Completed 200 OK in 1260ms (Views: 894.1ms | ActiveRecord: 353.5ms)
+
+
+Started GET "/omniauth_authorize/user.facebook" for 153.19.5.120 at 2012-11-20 10:53:22 +0100
+
+ActionController::RoutingError (uninitialized constant OmniauthAuthorizeController):
+  activesupport (3.2.8) lib/active_support/inflector/methods.rb:230:in `block in constantize'
+  activesupport (3.2.8) lib/active_support/inflector/methods.rb:229:in `each'
+  activesupport (3.2.8) lib/active_support/inflector/methods.rb:229:in `constantize'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:69:in `controller_reference'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:54:in `controller'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:32:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:600:in `call'
+  omniauth (1.1.1) lib/omniauth/strategy.rb:177:in `call!'
+  omniauth (1.1.1) lib/omniauth/strategy.rb:157:in `call'
+  omniauth (1.1.1) lib/omniauth/builder.rb:48:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.1) lib/rack/etag.rb:23:in `call'
+  rack (1.4.1) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:205:in `context'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:200:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/cookies.rb:339:in `call'
+  activerecord (3.2.8) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.8) lib/active_record/connection_adapters/abstract/connection_pool.rb:473:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:405:in `_run__1811184194646361525__call__3469022974221318322__callbacks'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.8) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  quiet_assets (1.0.1) lib/quiet_assets.rb:20:in `call_with_quiet_assets'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  thin (1.5.0) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.0) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.0) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.0) lib/thin/connection.rb:54:in `process'
+  thin (1.5.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.0) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.0) lib/eventmachine.rb:187:in `run'
+  thin (1.5.0) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.0) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.8) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.8) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.8) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.8) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 153.19.5.120 at 2012-11-20 10:55:30 +0100
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (106.3ms)[0m  [1mSELECT "books".* FROM "books" [0m
+  [1m[35mActsAsTaggableOn::Tag Load (78.5ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 9 AND "taggings"."taggable_type" = 'Book' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  Rendered books/index.html.erb within layouts/application (570.2ms)
+Completed 200 OK in 918ms (Views: 447.1ms | ActiveRecord: 458.1ms)
+
+
+Started GET "/auth/facebook" for 153.19.5.120 at 2012-11-20 10:55:33 +0100
+(facebook) Request phase initiated.
+
+
+Started GET "/auth/facebook/callback?state=3c8e8834271e860b99bd0336d16f435ac73e5305626913d5&code=AQB8gE0qbPgWVkhpzezW3cZp16XhMMg5Tuob7wKLjTFSTeMcYUfJfg3PBpuRAN6l3-WSYVrEzy92yydT5Is8xG4NQjztAo27KFjXyge-Vjk-yjTHxNuWiJql0CyMylijZF9ZhRHjxJg1ktPaNehUxnuAArBiidYRo9O-INvxdE_TlUdhp9xA2Q8p8X2XmfZxXAAx_lEzk6j_UTV3taP6_pLB" for 153.19.5.120 at 2012-11-20 10:57:12 +0100
+(facebook) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"3c8e8834271e860b99bd0336d16f435ac73e5305626913d5", "code"=>"AQB8gE0qbPgWVkhpzezW3cZp16XhMMg5Tuob7wKLjTFSTeMcYUfJfg3PBpuRAN6l3-WSYVrEzy92yydT5Is8xG4NQjztAo27KFjXyge-Vjk-yjTHxNuWiJql0CyMylijZF9ZhRHjxJg1ktPaNehUxnuAArBiidYRo9O-INvxdE_TlUdhp9xA2Q8p8X2XmfZxXAAx_lEzk6j_UTV3taP6_pLB", "provider"=>"facebook"}
+  [1m[36mAuthorization Load (75.7ms)[0m  [1mSELECT "authorizations".* FROM "authorizations" WHERE "authorizations"."provider" = 'facebook' AND "authorizations"."uid" = '1805970805' LIMIT 1[0m
+  [1m[35mUser Load (78.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  Rendered text template (0.0ms)
+Completed 200 OK in 501ms (Views: 3.4ms | ActiveRecord: 422.2ms)
+
+
+Started GET "/auth/facebook" for 153.19.5.120 at 2012-11-20 10:57:57 +0100
+(facebook) Request phase initiated.
+
+
+Started GET "/auth/facebook/callback?state=c67001a2d44d59ccd496f85be65152c160e4a26ef50d75d1&code=AQA_s-rlqW3S4XxSUdN7fLoV73QPajsUzjFsjlWygy6TJVArxCzd7rnYnSl-gNgTPdrY5asAFi52Lm5UBR4MRTi8t1HAFp47jf23_eEBDNLMouXYeano_FZK_-gw9c0B5_iVANcKI4v3-dz8UkdGKi3RRyObHXOOkbMyYVI4S9h--GTRm8bIHp8h4mmrBQnkqkWBeZXqH6X_6civ-SJrpzXn" for 153.19.5.120 at 2012-11-20 10:57:58 +0100
+(facebook) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"c67001a2d44d59ccd496f85be65152c160e4a26ef50d75d1", "code"=>"AQA_s-rlqW3S4XxSUdN7fLoV73QPajsUzjFsjlWygy6TJVArxCzd7rnYnSl-gNgTPdrY5asAFi52Lm5UBR4MRTi8t1HAFp47jf23_eEBDNLMouXYeano_FZK_-gw9c0B5_iVANcKI4v3-dz8UkdGKi3RRyObHXOOkbMyYVI4S9h--GTRm8bIHp8h4mmrBQnkqkWBeZXqH6X_6civ-SJrpzXn", "provider"=>"facebook"}
+  [1m[36mUser Load (241.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mAuthorization Load (76.8ms)[0m  SELECT "authorizations".* FROM "authorizations" WHERE "authorizations"."user_id" = 3 AND "authorizations"."provider" = 'facebook' AND "authorizations"."uid" = '1805970805' LIMIT 1
+  Rendered text template (0.0ms)
+Completed 200 OK in 323ms (Views: 0.6ms | ActiveRecord: 318.5ms)
+
+
+Started GET "/auth/facebook" for 153.19.5.120 at 2012-11-20 11:00:55 +0100
+(facebook) Request phase initiated.
+
+
+Started GET "/auth/facebook/callback?state=772225a8f65b7974c280eb05fdeb58e0262bbba804b5b685&code=AQDEKVYWZ5UdXE3lc7cxc6fBQ7lpToDipeIQEeMfGdgbUv84uE-t_hn1q2KZuJeq00PQmYaiI53417IRze3z8dK5BB0zzf4-sAbH24s1cu6fLP03EUR-T0vH6jiN4pHIrLC40ylgh6bLXdL33f6WU7yF4g8Ff1J8DUS8ywqFswPz6rlP6sLG-sBj9AVWvb1rsiJZUFQ_i-GvoU7R5E8ZuoEF" for 153.19.5.120 at 2012-11-20 11:00:55 +0100
+(facebook) Callback phase initiated.
+Processing by SessionsController#create as HTML
+  Parameters: {"state"=>"772225a8f65b7974c280eb05fdeb58e0262bbba804b5b685", "code"=>"AQDEKVYWZ5UdXE3lc7cxc6fBQ7lpToDipeIQEeMfGdgbUv84uE-t_hn1q2KZuJeq00PQmYaiI53417IRze3z8dK5BB0zzf4-sAbH24s1cu6fLP03EUR-T0vH6jiN4pHIrLC40ylgh6bLXdL33f6WU7yF4g8Ff1J8DUS8ywqFswPz6rlP6sLG-sBj9AVWvb1rsiJZUFQ_i-GvoU7R5E8ZuoEF", "provider"=>"facebook"}
+  [1m[36mUser Load (121.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mAuthorization Load (80.6ms)[0m  SELECT "authorizations".* FROM "authorizations" WHERE "authorizations"."user_id" = 3 AND "authorizations"."provider" = 'facebook' AND "authorizations"."uid" = '1805970805' LIMIT 1
+  Rendered text template (0.0ms)
+Completed 200 OK in 206ms (Views: 0.6ms | ActiveRecord: 202.3ms)
