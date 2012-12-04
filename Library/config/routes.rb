@@ -7,8 +7,23 @@ Library::Application.routes.draw do
     end
   end
   
+  match 'auth/:provider/callback', to: 'sessions#create'
+  match 'auth/failure', to: redirect('/')
+  match 'signout', to: 'sessions#destroy', as: 'signout'
+  
+  
+  resources :books do
+    resources :reviews
+  end
  
   # get 'books/:id/crop', to: 'books#crop', as: :crop_book
+  
+  #devise_scope :user do 
+  #  get "login", :to => "devise/sessions#new" 
+  #  get "register", :to => "registrations#new" 
+  #  get "settings", :to => "registrations#edit" 
+  #  get "logout", :to => "devise/sessions#destroy"
+  #end 
   
 
   get 'tags/:tag', to: 'books#index', as: :tag

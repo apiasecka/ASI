@@ -16,4 +16,17 @@ class User < ActiveRecord::Base
     end
   end
   
+  
+
+def apply_omniauth(omniauth)
+  self.email = auth_hash['user']['email'] if email.blank?
+  authentications.build(:provider => auth_hash['provider'], :uid => auth_hash['uid'])
+end
+
+def password_required?
+  (authentications.empty? || !password.blank?) && super
+end
+
+
+  
 end

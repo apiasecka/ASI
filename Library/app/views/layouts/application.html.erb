@@ -22,8 +22,16 @@
           <div class="container nav-collapse">
             <ul class="nav">
               <li><%= link_to "myGithub", "https://github.com/apiasecka/ASI" %>
-			  <li><%= link_to "Connect With Facebook", "/auth/facebook", :class => "popup", :"data-width" => 600, :"data-height" => 400 %>
-				<!-- <%= link_to image_tag("/images/facebook_connect.png"), "/auth/facebook", :class => 'login-popup' %> <%= link_to "Connect With Facebook", omniauth_authorize_path(:user, :facebook), :class => "popup", :"data-width" => 600, :"data-height" => 400 %> -->
+			  <li>
+				<div id="user_nav">
+					<% if current_user %>
+					Signed in as <strong><%= current_user.name %></strong>!
+					<%= link_to "Sign out", signout_path, id: "sign_out" %>
+					<% else %>
+					<%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+					<% end %>
+				</div>
+				<!--<%= link_to image_tag("/images/facebook_connect.png"), "/auth/facebook", :class => 'login-popup' %>  <%= link_to "Connect With Facebook", omniauth_authorize_path(:user, :facebook), :class => "popup", :"data-width" => 600, :"data-height" => 400 %> <%= link_to "Connect With Facebook", "/auth/facebook", :class => "popup", :"data-width" => 600, :"data-height" => 400 %>-->
             </ul>				
           </div><!--/.nav-collapse -->
         </div>
