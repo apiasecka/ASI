@@ -17,7 +17,6 @@ gem 'capybara', '~> 1.1.2', :groups => :test
 group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
-  gem 'twitter-bootstrap-rails', '~> 2.1.4'
   gem 'jquery-ui-rails', '~> 2.0.2'
   gem 'jquery-datatables-rails', '~> 1.11.1'
 end
@@ -29,11 +28,15 @@ group :development, :test do
   gem 'rspec-rails', '~> 2.11.0'
 end
 
+gem 'therubyracer'
+gem 'less-rails'
+gem 'twitter-bootstrap-rails'
+
 # alternatywa dla serwera Webrick
 gem 'thin'
 
 gem 'rmagick', '~> 2.13.1'
 gem 'carrierwave', '~> 0.7.0'
-
-gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'omniauth-twitter'
+gem 'omniauth-github'

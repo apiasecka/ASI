@@ -4,9 +4,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "myLibrary" %></title>
+    <title><%= content_for :title ? yield(:title) : "myLibrary" %></title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
   </head>
   <body>
 
@@ -22,16 +23,15 @@
           <div class="container nav-collapse">
             <ul class="nav">
               <li><%= link_to "myGithub", "https://github.com/apiasecka/ASI" %>
-			  <li>
-				<div id="user_nav">
-					<% if current_user %>
-					Signed in as <strong><%= current_user.name %></strong>!
-					<%= link_to "Sign out", signout_path, id: "sign_out" %>
-					<% else %>
-					<%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
-					<% end %>
-				</div>
-				<!--<%= link_to image_tag("/images/facebook_connect.png"), "/auth/facebook", :class => 'login-popup' %>  <%= link_to "Connect With Facebook", omniauth_authorize_path(:user, :facebook), :class => "popup", :"data-width" => 600, :"data-height" => 400 %> <%= link_to "Connect With Facebook", "/auth/facebook", :class => "popup", :"data-width" => 600, :"data-height" => 400 %>-->
+                <% if current_user %>
+                  <li style="margin-top: 10px;">Signed in as <strong><%= current_user.name %></strong>!</li>
+                  <li><%= link_to "Sign out", logout_path %></li>
+                <% else %>
+                  <li><%= link_to "Sign in with Facebook", "/auth/facebook"%></li>
+                  <li><%= link_to "Sign in with Github", "/auth/github"%></li>
+                  <li><%= link_to "Sign in with Twitter", "/auth/twitter"%></li>
+                <% end %>
+        			</li>
             </ul>				
           </div><!--/.nav-collapse -->
         </div>
@@ -49,11 +49,5 @@
         <p>&copy; 2012/13 by ASI</p>
       </footer>
     </div> <!-- /container -->
-
-    <!-- Javascripts
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <%= javascript_include_tag "application" %>
-
   </body>
 </html>

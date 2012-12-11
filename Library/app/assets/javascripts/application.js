@@ -17,6 +17,7 @@
 //= require_tree .
 
 jQuery(function() {
+  if (window.location.hash == '#_=_')window.location.hash = '';
 
   $('#cropbox').Jcrop({
     onChange: updateCoords,
