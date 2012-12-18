@@ -27,9 +27,9 @@
                   <li style="margin-top: 10px;">Signed in as <strong><%= current_user.name %></strong>!</li>
                   <li><%= link_to "Sign out", logout_path %></li>
                 <% else %>
-                  <li><%= link_to "Sign in with Facebook", "/auth/facebook"%></li>
-                  <li><%= link_to "Sign in with Github", "/auth/github"%></li>
-                  <li><%= link_to "Sign in with Twitter", "/auth/twitter"%></li>
+                  <li class="sign"><%= link_to "Sign in with Facebook", "/auth/facebook"%></li>
+                  <li class="sign"><%= link_to "Sign in with Github", "/auth/github"%></li>
+                  <li class="sign"><%= link_to "Sign in with Twitter", "/auth/twitter"%></li>
                 <% end %>
         			</li>
             </ul>				
@@ -46,7 +46,7 @@
       </div><!--/row-->
 
       <footer>
-        <p>&copy; 2012/13 by ASI</p>
+        <p>&copy; by APiasecka</p>
       </footer>
     </div> <!-- /container -->
   </body>
