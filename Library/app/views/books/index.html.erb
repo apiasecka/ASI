@@ -43,26 +43,28 @@
 -->
 <% @books.each do |book| %>
 	<article class="book">
-		<div>
+		<h3><%= book.title %></h3>
+		<div class="img">
 			<%= image_tag(book.cover_url(:thumb)) if book.cover? %>
 		</div>
 		<div>
-		<h3><%= book.title %></h3>
 			<%= model_class.human_attribute_name(:author) %>: <%= book.author %><br />
 			<%= model_class.human_attribute_name(:isbn) %>: <%= book.isbn %><br />
 			<%= model_class.human_attribute_name(:price_pln) %>: <strong><%= book.price_pln %></strong><br />
 		</div>
+		<div class="btns">
+		<%= link_to t('.show', :default => t("helpers.links.show")),
+                    book_path(book), :class => 'btn btn-mini' %>
 		<% if current_user %>
-			<%= link_to t('.show', :default => t("helpers.links.show")),
-                      book_path(book), :class => 'btn btn-mini' %>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_book_path(book), :class => 'btn btn-mini' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      book_path(book),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-mini btn-danger' %>
+			<%= link_to t('.edit', :default => t("helpers.links.edit")),
+						edit_book_path(book), :class => 'btn btn-mini' %>
+			<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+						book_path(book),
+						:method => :delete,
+						:data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+						:class => 'btn btn-mini btn-danger' %>
 		<% end %>
+		</div>
 	</article>
 <% end %>
 

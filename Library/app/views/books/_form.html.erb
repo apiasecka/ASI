@@ -19,10 +19,9 @@
   <%= f.hidden_field :cover_cache %>
   <%= f.input :remote_cover_url, :label => "or input URL", :input_html => { :class => "span6" } %>
 
-  <%= f.input :tag_list, :label => "Tags (separated by spaces)" %>
 
   <div class="form-actions">
     <%= f.button :submit, :class => 'btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")), books_path, :class => 'btn' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")), books_path, :class => 'btn' %> 
   </div>
 <% end %>

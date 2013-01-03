@@ -22,7 +22,7 @@
           <a class="brand" href="#">myLibrary</a>
           <div class="container nav-collapse">
             <ul class="nav">
-              <li><%= link_to "myGithub", "https://github.com/apiasecka/ASI" %>
+              <li><%= link_to "myGithub", "https://github.com/apiasecka/ASI" %></li>
                 <% if current_user %>
                   <li style="margin-top: 10px;">Signed in as <strong><%= current_user.name %></strong>!</li>
                   <li><%= link_to "Sign out", logout_path %></li>
@@ -31,7 +31,6 @@
                   <li class="sign"><%= link_to "Sign in with Github", "/auth/github"%></li>
                   <li class="sign"><%= link_to "Sign in with Twitter", "/auth/twitter"%></li>
                 <% end %>
-        			</li>
             </ul>				
           </div><!--/.nav-collapse -->
         </div>
