@@ -1,0 +1,75 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require jquery.Jcrop
+ *= require bootstrap_and_overrides
+ *= require_self
+ *= require_tree .
+ */
+
+body { 
+	background: #EDEDED;
+	margin-top: 60px; 
+}
+
+.book {
+	float: left; 
+	padding: 10px 20px;
+}
+
+article {
+	width: 350px;
+	min-height: 280px; 
+}
+
+.img{
+	float: left;
+	margin-right: 10px;
+}
+
+.img img{
+	border: 1px solid #B7B7B7;
+}
+
+.btns{
+	padding-top:10px; 
+	margin: 0 auto;
+	clear: both;
+}
+
+.nav li.sign {
+	float: right; 
+}
+
+@media (min-width: 980px) and (max-width: 1199px){ 
+	article {
+		width: 430px;
+	}
+}
+
+
+@media only screen and (max-width: 979px) {
+	body{
+		margin-top: 0;
+	}
+	
+	.book {
+		padding: 10px 0;
+	}
+	
+	article {
+		width: 100%;
+	}
+}
+
+/*
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+
+}*/

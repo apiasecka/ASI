@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for :title ? yield(:title) : "myLibrary" %></title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+  </head>
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">myLibrary</a>
+          <div class="container nav-collapse">
+            <ul class="nav">
+              <li><%= link_to "myGithub", "https://github.com/apiasecka/ASI" %></li>
+                <% if current_user %>
+                  <li style="margin-top: 10px;">Signed in as <strong><%= current_user.name %></strong>!</li>
+                  <li><%= link_to "Sign out", logout_path %></li>
+                <% else %>
+                  <li class="sign"><%= link_to "Sign in with Facebook", "/auth/facebook"%></li>
+                  <li class="sign"><%= link_to "Sign in with Github", "/auth/github"%></li>
+                  <li class="sign"><%= link_to "Sign in with Twitter", "/auth/twitter"%></li>
+                <% end %>
+            </ul>				
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="span12">
+          <%= yield %>
+        </div>
+      </div><!--/row-->
+
+      <footer>
+        <p>&copy; by APiasecka</p>
+      </footer>
+    </div> <!-- /container -->
+  </body>
+</html>
