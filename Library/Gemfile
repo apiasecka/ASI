@@ -42,4 +42,3 @@ gem 'omniauth-twitter'
 gem 'omniauth-github'
 
 gem 'heroku', '~> 2.33.5'
-gem 'thor', '~>0.16.0'
